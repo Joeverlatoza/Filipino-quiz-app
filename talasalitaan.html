@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TALASALITAAN — Saliksik at Laro</title>
+<style>
+/* ---- Offline static utility CSS (replaces Tailwind CDN; no network calls) ---- */
+*,*::before,*::after{box-sizing:border-box;margin:0}
+.block{display:block}
+.flex{display:flex}
+.grid{display:grid}
+.hidden{display:none}
+.fixed{position:fixed}
+.sticky{position:sticky}
+.inset-0{top:0;right:0;bottom:0;left:0}
+.top-0{top:0}
+.bottom-6{bottom:1.5rem}
+.left-1\/2{left:50%}
+.-translate-x-1\/2{--tw-tx:-50%;transform:translateX(var(--tw-tx))}
+.min-h-screen{min-height:100vh}
+.max-w-2xl{max-width:42rem}
+.max-w-md{max-width:28rem}
+.mx-auto{margin-left:auto;margin-right:auto}
+.min-w-0{min-width:0px}
+.min-w-\[54px\]{min-width:54px}
+.w-full{width:100%}
+.w-4{width:1rem}
+.w-7{width:1.75rem}
+.w-9{width:2.25rem}
+.w-10{width:2.5rem}
+.w-\[17px\]{width:17px}
+.h-full{height:100%}
+.h-1{height:0.25rem}
+.h-1\.5{height:0.375rem}
+.h-4{height:1rem}
+.h-7{height:1.75rem}
+.h-9{height:2.25rem}
+.h-10{height:2.5rem}
+.h-\[17px\]{height:17px}
+.max-h-\[58vh\]{max-height:58vh}
+.max-h-\[85vh\]{max-height:85vh}
+.overflow-hidden{overflow:hidden}
+.overflow-y-auto{overflow-y:auto}
+.z-20{z-index:20}
+.z-40{z-index:40}
+.z-50{z-index:50}
+.shrink-0{flex-shrink:0}
+.flex-1{flex:1 1 0%}
+.flex-col{flex-direction:column}
+.flex-wrap{flex-wrap:wrap}
+.items-center{align-items:center}
+.items-start{align-items:flex-start}
+.items-end{align-items:flex-end}
+.justify-between{justify-content:space-between}
+.justify-center{justify-content:center}
+.place-items-center{place-items:center}
+.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.gap-1\.5{gap:0.375rem}
+.gap-2{gap:0.5rem}
+.gap-2\.5{gap:0.625rem}
+.gap-3{gap:0.75rem}
+.gap-3\.5{gap:0.875rem}
+.gap-4{gap:1rem}
+.gap-x-5{column-gap:1.25rem}
+.gap-y-1\.5{row-gap:0.375rem}
+.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pointer-events-none{pointer-events:none}
+.cursor-default{cursor:default}
+.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.p-3\.5{padding:0.875rem}
+.p-4{padding:1rem}
+.p-5{padding:1.25rem}
+.p-6{padding:1.5rem}
+.px-0\.5{padding-left:0.125rem;padding-right:0.125rem}
+.px-3{padding-left:0.75rem;padding-right:0.75rem}
+.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}
+.px-4{padding-left:1rem;padding-right:1rem}
+.px-5{padding-left:1.25rem;padding-right:1.25rem}
+.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}
+.py-2{padding-top:0.5rem;padding-bottom:0.5rem}
+.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}
+.py-3{padding-top:0.75rem;padding-bottom:0.75rem}
+.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}
+.py-4{padding-top:1rem;padding-bottom:1rem}
+.py-5{padding-top:1.25rem;padding-bottom:1.25rem}
+.py-6{padding-top:1.5rem;padding-bottom:1.5rem}
+.pb-4{padding-bottom:1rem}
+.pt-1{padding-top:0.25rem}
+.pt-2{padding-top:0.5rem}
+.pt-5{padding-top:1.25rem}
+.pr-1{padding-right:0.25rem}
+.mb-1{margin-bottom:0.25rem}
+.mb-1\.5{margin-bottom:0.375rem}
+.mb-3{margin-bottom:0.75rem}
+.mt-0\.5{margin-top:0.125rem}
+.mt-1{margin-top:0.25rem}
+.mt-1\.5{margin-top:0.375rem}
+.mt-2{margin-top:0.5rem}
+.mt-3{margin-top:0.75rem}
+.mt-3\.5{margin-top:0.875rem}
+.mt-4{margin-top:1rem}
+.mb-4{margin-bottom:1rem}
+.pt-4{padding-top:1rem}
+.max-w-sm{max-width:24rem}
+.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.space-y-1>*+*{margin-top:0.25rem}
+.space-y-1\.5>*+*{margin-top:0.375rem}
+.space-y-2>*+*{margin-top:0.5rem}
+.space-y-2\.5>*+*{margin-top:0.625rem}
+.space-y-3>*+*{margin-top:0.75rem}
+.space-y-3\.5>*+*{margin-top:0.875rem}
+.space-y-4>*+*{margin-top:1rem}
+.space-y-6>*+*{margin-top:1.5rem}
+.space-y-8>*+*{margin-top:2rem}
+.border{border-width:1px;border-style:solid;border-color:#E5DFD1}
+.border-t{border-top-width:1px;border-top-style:solid;border-top-color:#E5DFD1}
+.border-b{border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E5DFD1}
+.border-dashed{border-style:dashed}
+.border-\[\#D8D2C4\]{border-color:#D8D2C4}
+.border-\[\#DCCBA0\]{border-color:#DCCBA0}
+.border-\[\#E5DFD1\]{border-color:#E5DFD1}
+.rounded{border-radius:0.25rem}
+.rounded-md{border-radius:0.375rem}
+.rounded-lg{border-radius:0.5rem}
+.rounded-xl{border-radius:0.75rem}
+.rounded-2xl{border-radius:1rem}
+.rounded-t-2xl{border-top-left-radius:1rem;border-top-right-radius:1rem}
+.rounded-full{border-radius:9999px}
+.shadow-xl{box-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1)}
+.bg-ink{background-color:#221F1B}
+.bg-paper{background-color:#FAF8F3}
+.bg-maroon{background-color:#7A2E2E}
+.bg-sage{background-color:#5B6B54}
+.bg-white{background-color:#FFFFFF}
+.bg-\[\#221F1B\]\/40{background-color:rgba(34,31,27,0.4)}
+.bg-\[\#E5DFD1\]{background-color:#E5DFD1}
+.bg-\[\#F1E9D8\]{background-color:#F1E9D8}
+.text-ink{color:#221F1B}
+.text-paper{color:#FAF8F3}
+.text-maroon{color:#7A2E2E}
+.text-sage{color:#5B6B54}
+.text-white{color:#FFFFFF}
+.text-\[\#3A362F\]{color:#3A362F}
+.text-\[\#57534A\]{color:#57534A}
+.text-\[\#6B6459\]{color:#6B6459}
+.text-\[\#7A5A1E\]{color:#7A5A1E}
+.text-\[\#8A8378\]{color:#8A8378}
+.text-\[\#9A9384\]{color:#9A9384}
+.text-\[\#C7C0AF\]{color:#C7C0AF}
+.font-normal{font-weight:400}
+.font-medium{font-weight:500}
+.font-semibold{font-weight:600}
+.italic{font-style:italic}
+.uppercase{text-transform:uppercase}
+.text-left{text-align:left}
+.text-center{text-align:center}
+.text-right{text-align:right}
+.leading-none{line-height:1}
+.leading-tight{line-height:1.25}
+.leading-snug{line-height:1.375}
+.leading-relaxed{line-height:1.625}
+.leading-\[1\.15\]{line-height:1.15}
+.tracking-tight{letter-spacing:-0.025em}
+.tracking-wide{letter-spacing:0.025em}
+.tracking-\[0\.14em\]{letter-spacing:0.14em}
+.tabular-nums{font-variant-numeric:tabular-nums}
+.text-\[9px\]{font-size:9px}
+.text-\[10px\]{font-size:10px}
+.text-\[10\.5px\]{font-size:10.5px}
+.text-\[11px\]{font-size:11px}
+.text-\[11\.5px\]{font-size:11.5px}
+.text-\[12px\]{font-size:12px}
+.text-\[12\.5px\]{font-size:12.5px}
+.text-\[13px\]{font-size:13px}
+.text-\[13\.5px\]{font-size:13.5px}
+.text-\[14px\]{font-size:14px}
+.text-\[14\.5px\]{font-size:14.5px}
+.text-\[15px\]{font-size:15px}
+.text-\[16px\]{font-size:16px}
+.text-\[16\.5px\]{font-size:16.5px}
+.text-\[17px\]{font-size:17px}
+.text-\[18px\]{font-size:18px}
+.text-\[19px\]{font-size:19px}
+.text-\[20px\]{font-size:20px}
+.text-\[21px\]{font-size:21px}
+.text-\[22px\]{font-size:22px}
+.text-\[26px\]{font-size:26px}
+.text-\[28px\]{font-size:28px}
+.text-\[44px\]{font-size:44px}
+.transition{transition-property:color,background-color,border-color,opacity,box-shadow,transform;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}
+.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}
+.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}
+.duration-200{transition-duration:.2s}
+.duration-300{transition-duration:.3s}
+.opacity-0{opacity:0}
+.translate-y-4{transform:translateY(1rem)}
+.hover\:bg-\[\#3A362F\]:hover{background-color:#3A362F}
+.hover\:bg-maroon-dark:hover{background-color:#5E2222}
+.hover\:bg-paper:hover{background-color:#FAF8F3}
+.hover\:bg-white:hover{background-color:#FFFFFF}
+.hover\:border-maroon:hover{border-color:#7A2E2E}
+.hover\:text-\[\#57534A\]:hover{color:#57534A}
+.active\:scale-\[\.99\]:active{transform:scale(0.99)}
+.active\:scale-\[\.995\]:active{transform:scale(0.995)}
+.disabled\:opacity-100:disabled{opacity:1}
+.\!bg-maroon{background-color:#7A2E2E !important}
+.\!bg-sage{background-color:#5B6B54 !important}
+.\!border-maroon{border-color:#7A2E2E !important}
+.\!border-sage{border-color:#5B6B54 !important}
+.\!text-white{color:#FFFFFF !important}
+@media (min-width:640px){
+.sm\:border{border-width:1px;border-style:solid;border-color:#E5DFD1}
+.sm\:items-center{align-items:center}
+.sm\:max-w-md{max-width:28rem}
+.sm\:p-5{padding:1.25rem}
+.sm\:p-7{padding:1.75rem}
+.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}
+.sm\:rounded-2xl{border-radius:1rem}
+.sm\:scale-95{transform:scale(0.95)}
+.sm\:translate-y-0{transform:translateY(0)}
+.sm\:text-\[25px\]{font-size:25px}
+.sm\:text-\[30px\]{font-size:30px}
+.sm\:text-\[34px\]{font-size:34px}
+}
+</style>
+<style>
+  * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
+  html, body { background: #FAF8F3; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #221F1B; }
+  .serif { font-family: Georgia, "Times New Roman", "Noto Serif", serif; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .fade-up { animation: fadeUp .3s ease both; }
+
+  @keyframes shake { 0%,100% { transform: translateX(0); } 20% { transform: translateX(-5px); } 40% { transform: translateX(5px); } 60% { transform: translateX(-3px); } 80% { transform: translateX(3px); } }
+  .shake { animation: shake .3s ease; }
+
+  .timer-fill { transition: width .1s linear, background-color .3s ease; }
+  .opt-btn { transition: border-color .15s ease, background-color .15s ease; }
+  .opt-btn:active { transform: scale(0.99); }
+  .card-lift { transition: border-color .2s ease, box-shadow .2s ease; }
+  .card-lift:hover { border-color: #7A2E2E; box-shadow: 0 2px 14px rgba(34,31,27,0.06); }
+
+  .scrollbar-thin::-webkit-scrollbar { width: 6px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: #D8D2C4; border-radius: 3px; }
+
+  ::selection { background: #E8DCC8; color: #221F1B; }
+
+  .focus-ring:focus-visible { outline: 2px solid #7A2E2E; outline-offset: 2px; }
+
+  input, textarea, button, select { font: inherit; color: inherit; }
+  input, textarea { outline: none; }
+  input::placeholder, textarea::placeholder { color: #B9B2A2; }
+  button { cursor: pointer; background: none; }
+  form { margin: 0; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fade-up, .shake { animation: none !important; }
+  }
+</style>
+</head>
+<body class="antialiased">
+
+  <div id="app" class="min-h-screen flex flex-col">
+
+    <!-- HEADER -->
+    <header class="border-b border-[#E5DFD1] bg-paper sticky top-0 z-20">
+      <div class="max-w-2xl mx-auto px-5 py-4 flex items-center justify-between">
+        <button id="brandBtn" class="text-left focus-ring rounded">
+          <p class="serif text-[19px] font-semibold tracking-tight leading-none text-ink">TALASALITAAN</p>
+          <p class="text-[10.5px] font-medium tracking-[0.14em] uppercase text-[#8A8378] mt-1">Saliksik at Laro</p>
+        </button>
+        <div class="flex items-center gap-3 text-[12px] text-[#6B6459]">
+          <div id="streakPill" class="hidden items-center gap-1.5 font-medium">
+            <span class="serif italic text-maroon" id="streakCount">0</span>
+            <span>araw na sunod-sunod</span>
+          </div>
+          <button id="accountBtn" class="border border-[#E5DFD1] rounded-lg px-3 py-1.5 text-[12px] font-medium text-[#57534A] hover:bg-white transition focus-ring" aria-label="Profile">
+            <span id="accountLabel">Mag-login</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main id="screen" class="flex-1 max-w-2xl w-full mx-auto px-5 py-6"></main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-[#E5DFD1] py-5">
+      <p class="max-w-2xl mx-auto px-5 text-[11px] text-[#9A9384] text-center leading-relaxed">
+        Isang instrumento pang-edukasyon para sa muling pagtuklas ng malalim na talasalitaang Filipino.
+      </p>
+    </footer>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toastHost" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-2 pointer-events-none"></div>
+
+  <!-- SHEET (bottom sheet / modal) -->
+  <div id="sheetBackdrop" class="hidden fixed inset-0 z-40 bg-[#221F1B]/40 transition-opacity duration-200 opacity-0">
+    <div class="h-full flex items-end sm:items-center justify-center">
+      <div id="sheetPanel" class="w-full sm:max-w-md bg-paper border-t sm:border border-[#E5DFD1] rounded-t-2xl sm:rounded-2xl shadow-xl max-h-[85vh] overflow-y-auto scrollbar-thin translate-y-4 sm:translate-y-0 sm:scale-95 opacity-0 transition-all duration-200">
+        <div class="px-5 sm:px-6 py-6" id="sheetBody"></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ============================================================
+     UTILITIES
+     ============================================================ */
+  var $ = function (sel, root) { return (root || document).querySelector(sel); };
+  var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
+  var rand = function (n) { return Math.floor(Math.random() * n); };
+  var shuffle = function (arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = rand(i + 1);
+      var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+    }
+    return a;
+  };
+  var esc = function (s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  };
+
+  var LS = {
+    ACCOUNTS: 'talasalitaan.accounts',
+    ACTIVE: 'talasalitaan.active',
+    STATS: 'stats',
+    STREAK: 'streak',
+    BEST: 'best',
+  };
+  var readJSON = function (key, fallback) {
+    try {
+      var raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : fallback;
+    } catch (e) { return fallback; }
+  };
+  var writeJSON = function (key, value) {
+    try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) {}
+  };
+  /* Per-profile key: every player's data lives under its own namespace,
+     so switching accounts on the same device swaps data cleanly and
+     nothing leaks between profiles that share a phone. */
+  var scopedKey = function (suffix) {
+    var uid = (Auth.current() && Auth.current().id) || 'guest';
+    return 'talasalitaan.' + uid + '.' + suffix;
+  };
+
+  /* ============================================================
+     AUTH — local device profiles (offline, no server).
+     A "login" here only ever checks against accounts stored on
+     THIS phone's browser storage. Moving to another phone is done
+     via an export/import backup code (see Backup module below).
+     ============================================================ */
+  var Auth = {
+    _current: null,
+
+    normalizeUsername: function (u) {
+      return String(u || '').trim().toLowerCase();
+    },
+
+    hash: function (text) {
+      try {
+        if (window.crypto && window.crypto.subtle && window.isSecureContext !== false) {
+          var enc = new TextEncoder().encode(text);
+          return window.crypto.subtle.digest('SHA-256', enc).then(function (buf) {
+            var bytes = Array.from(new Uint8Array(buf));
+            return bytes.map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+          });
+        }
+      } catch (e) {}
+      // Fallback digest for older/non-secure contexts (still local-only, never sent anywhere)
+      var h = 0, i, chr;
+      for (i = 0; i < text.length; i++) {
+        chr = text.charCodeAt(i);
+        h = ((h << 5) - h) + chr;
+        h |= 0;
+      }
+      return Promise.resolve('fb' + Math.abs(h).toString(16) + text.length.toString(16));
+    },
+
+    accounts: function () { return readJSON(LS.ACCOUNTS, {}); },
+    saveAccounts: function (a) { writeJSON(LS.ACCOUNTS, a); },
+
+    current: function () { return this._current; },
+
+    restoreSession: function () {
+      var activeId = readJSON(LS.ACTIVE, null);
+      if (!activeId) return null;
+      var accs = this.accounts();
+      var acc = accs[activeId];
+      if (!acc) return null;
+      this._current = { id: acc.id, username: acc.username };
+      return this._current;
+    },
+
+    signOut: function () {
+      this._current = null;
+      writeJSON(LS.ACTIVE, null);
+    },
+
+    exists: function (username) {
+      var key = this.normalizeUsername(username);
+      var accs = this.accounts();
+      return !!accs[key];
+    },
+
+    create: function (username, password) {
+      var self = this;
+      var key = this.normalizeUsername(username);
+      if (!key) return Promise.reject(new Error('Kailangan ng username.'));
+      if (key.length < 3) return Promise.reject(new Error('Hindi bababa sa 3 letra ang username.'));
+      if (!password || password.length < 4) return Promise.reject(new Error('Hindi bababa sa 4 na karakter ang password.'));
+      var accs = this.accounts();
+      if (accs[key]) return Promise.reject(new Error('May account na gamit ang username na ito.'));
+      return this.hash(password).then(function (hashed) {
+        var acc = { id: key, username: username.trim(), passHash: hashed, createdAt: Date.now() };
+        accs[key] = acc;
+        self.saveAccounts(accs);
+        self._current = { id: acc.id, username: acc.username };
+        writeJSON(LS.ACTIVE, acc.id);
+        return self._current;
+      });
+    },
+
+    login: function (username, password) {
+      var self = this;
+      var key = this.normalizeUsername(username);
+      var accs = this.accounts();
+      var acc = accs[key];
+      if (!acc) return Promise.reject(new Error('Walang account na may ganitong username sa telepono na ito.'));
+      return this.hash(password).then(function (hashed) {
+        if (hashed !== acc.passHash) return Promise.reject(new Error('Maling password.'));
+        self._current = { id: acc.id, username: acc.username };
+        writeJSON(LS.ACTIVE, acc.id);
+        return self._current;
+      });
+    },
+
+    changePassword: function (oldPassword, newPassword) {
+      var self = this;
+      if (!this._current) return Promise.reject(new Error('Wala kang naka-login na account.'));
+      if (!newPassword || newPassword.length < 4) return Promise.reject(new Error('Hindi bababa sa 4 na karakter ang bagong password.'));
+      var accs = this.accounts();
+      var acc = accs[this._current.id];
+      return this.hash(oldPassword).then(function (hashed) {
+        if (hashed !== acc.passHash) return Promise.reject(new Error('Mali ang kasalukuyang password.'));
+        return self.hash(newPassword);
+      }).then(function (newHashed) {
+        acc.passHash = newHashed;
+        accs[acc.id] = acc;
+        self.saveAccounts(accs);
+      });
+    },
+
+    listUsernames: function () {
+      var accs = this.accounts();
+      return Object.keys(accs).map(function (k) { return accs[k].username; });
+    },
+  };
+
+  var CHECK_SVG = '<svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+  var CROSS_SVG = '<svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>';
+  var CLOCK_SVG = '<svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+  var ARROW_SVG = '<svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>';
+
+  /* ============================================================
+     DATA — DEEP FILIPINO WORDS
+     ============================================================ */
+  var WORDS = [
+    { word: 'Alitaptap', meaning: 'Maliit na kulisap na nagliliwanag sa gabi.', english: 'Firefly', example: 'Ang mga alitaptap ay parang mga bituing nahulog sa kaparangan.', translation: 'The fireflies are like stars that fell onto the fields.' },
+    { word: 'Salinlahi', meaning: 'Mga taong magkakasunod na henerasyon; ang mga susunod na angkan.', english: 'Generation, descendants', example: 'Ang ating salinlahi ay may tungkuling pangalagaan ang wika.', translation: 'Our generation has the duty to care for the language.' },
+    { word: 'Pantablay', meaning: 'Kawad o kordon na ginagamit sa paglilipat ng kuryente o koneksyon.', english: 'Cable, cord', example: 'Nakalimutan niyang isaksak ang pantablay ng kanyang telepono.', translation: 'He forgot to plug in his phone cable.' },
+    { word: 'Maririkit', meaning: 'Magaganda, kaakit-akit, o kahali-halina ang anyo.', english: 'Beautiful, charming', example: 'Maririkit ang mga bulaklak sa hardin ng aking lola.', translation: 'The flowers in my grandmother\u2019s garden are beautiful.' },
+    { word: 'Duyog', meaning: 'Malakas at biglaang pagsalakay; paglusob ng kalaban.', english: 'Invasion, attack', example: 'Ang duyog ng mga mananakop ay nagdulot ng takot sa bayan.', translation: 'The invaders\u2019 attack brought fear to the town.' },
+    { word: 'Himatay', meaning: 'Mawalan ng malay; mahimatay.', english: 'To faint', example: 'Himatay siya dahil sa matinding gutom at pagod.', translation: 'She fainted from extreme hunger and fatigue.' },
+    { word: 'Batlag', meaning: 'Isang uri ng maliit na bangka o sasakyang pandagat.', english: 'Small boat', example: 'Sumakay kami sa batlag upang tumawid sa ilog.', translation: 'We rode a small boat to cross the river.' },
+    { word: 'Badhi', meaning: 'Pakiramdam ng panghihina o pagkahilo; sakit ng katawan.', english: 'Weakness, ache', example: 'May badhi ang kanyang katawan matapos ang mahabang lakad.', translation: 'His body aches after the long walk.' },
+    { word: 'Katalonan', meaning: 'Babaeng manggagamot at tagapamagitan sa mga diyos noong unang panahon.', english: 'Priestess, healer', example: 'Ang katalonan ay pinagpipitaganan ng buong nayon.', translation: 'The priestess was revered by the whole village.' },
+    { word: 'Himagsikan', meaning: 'Pakikibaka o pag-aalsa laban sa pang-aapi.', english: 'Revolution, uprising', example: 'Ang himagsikan ay nagbigay-daan sa kalayaan ng bansa.', translation: 'The revolution paved the way for the country\u2019s freedom.' },
+    { word: 'Manghihiram', meaning: 'Taong humihiram ng bagay o salita mula sa iba.', english: 'Borrower', example: 'Ang manghihiram ay dapat marunong magsauli.', translation: 'A borrower should know how to return what was borrowed.' },
+    { word: 'Bulwagan', meaning: 'Malaking silid o gusali para sa mga pagpupulong.', english: 'Hall, auditorium', example: 'Ginanap ang programa sa bulwagan ng paaralan.', translation: 'The program was held in the school hall.' },
+    { word: 'Talinghaga', meaning: 'Matalinghagang pahayag; hindi tuwirang kahulugan.', english: 'Metaphor, allegory', example: 'Ang tula ay puno ng talinghaga tungkol sa pag-ibig.', translation: 'The poem is full of metaphors about love.' },
+    { word: 'Sinigbin', meaning: 'Nilagang tubig na may halong sangkap para sa lunas.', english: 'Herbal decoction', example: 'Ang sinigbin ng dahon ay gamot sa kanyang ubo.', translation: 'The leaf decoction is medicine for his cough.' },
+    { word: 'Kalinangan', meaning: 'Kultura o kabihasnan ng isang pangkat ng tao.', english: 'Culture, civilization', example: 'Mahalagang pangalagaan ang kalinangan ng ating bayan.', translation: 'It is important to preserve our nation\u2019s culture.' },
+    { word: 'Anluwage', meaning: 'Manggagawa ng kahoy; karpintero.', english: 'Carpenter', example: 'Ang anluwage ay gumagawa ng matibay na mesa.', translation: 'The carpenter makes sturdy tables.' },
+    { word: 'Pamahingahan', meaning: 'Lugar o oras ng pagpapahinga.', english: 'Resting place, break', example: 'Ang ilalim ng puno ay ang aming pamahingahan.', translation: 'Under the tree is our resting place.' },
+    { word: 'Gunitain', meaning: 'Alalahanin o isipin muli ang nakaraan.', english: 'To recall, remember', example: 'Gunitain natin ang mga bayaning nagbuwis ng buhay.', translation: 'Let us remember the heroes who sacrificed their lives.' },
+    { word: 'Bayanihan', meaning: 'Diwa ng pagtutulungan at pagkakaisa ng isang pamayanan sa pagtupad ng isang layunin.', english: 'Communal unity, spirit of cooperation', example: 'Nagbayanihan ang buong barangay para linisin ang ilog.', translation: 'The whole village came together in the spirit of bayanihan to clean the river.' },
+    { word: 'Kundiman', meaning: 'Tradisyunal na awiting Pilipino tungkol sa matinding pag-ibig, kadalasa\u2019y hindi natutugunan.', english: 'Traditional Filipino love song', example: 'Ang kundiman ni Maria ay nagpahayag ng kanyang matinding pagmamahal sa bayan.', translation: 'Maria\u2019s kundiman expressed her intense love for the country.' },
+    { word: 'Harana', meaning: 'Pag-awit ng lalaki sa babaeng kanyang iniibig, karaniwa\u2019y sa ilalim ng bintana nito sa gabi.', english: 'Serenade', example: 'Si Juan ay nag-harana kay Maria sa ilalim ng kanyang bintana kagabi.', translation: 'Juan serenaded Maria beneath her window last night.' },
+    { word: 'Sinta', meaning: 'Taimtim na tawag sa taong iniibig; katumbas ng \u201cmahal ko\u201d o \u201cirog.\u201d', english: 'Beloved, darling', example: 'Sinta, ikaw ang liwanag ng aking buhay.', translation: 'My beloved, you are the light of my life.' },
+    { word: 'Paraluman', meaning: 'Inspirasyon o musa, lalo na sa sining at pagkamalikhain.', english: 'Muse, inspiration', example: 'Si Maria ang naging paraluman ng makata sa kanyang mga tula.', translation: 'Maria became the muse of the poet in his verses.' },
+    { word: 'Tadhana', meaning: 'Ang itinakda ng kapalaran; hindi maiiwasang pangyayari sa buhay.', english: 'Destiny, fate', example: 'Ang pagkikita nila ay tadhana, hindi lang simpleng pagkakataon.', translation: 'Their meeting was destined, not just a simple coincidence.' },
+    { word: 'Gunita', meaning: 'Alaala o pag-gunita sa nakaraan, may halong pananabik at pagmamahal.', english: 'Memory, remembrance', example: 'Ang mga gunita ng ating kabataan ay nagbibigay-kulay sa kasalukuyan.', translation: 'The memories of our youth bring color to the present.' },
+    { word: 'Dalisay', meaning: 'Dalisay, walang halong dumi o karumihan; taos-puso at walang kondisyon.', english: 'Pure, unadulterated', example: 'Ang kanyang pagmamahal ay dalisay at walang kondisyon.', translation: 'His love is pure and unconditional.' },
+    { word: 'Pahimakas', meaning: 'Ang huling paalam, kadalasa\u2019y may bigat ng kalungkutan o kawalan.', english: 'Final farewell', example: 'Bago siya pumanaw, nagbigay siya ng kanyang huling pahimakas sa kanyang pamilya.', translation: 'Before he passed away, he gave his final farewell to his family.' },
+    { word: 'Alapaap', meaning: 'Kalagayan ng pag-iisip na parang nasa ulap o nangungulila; ang daigdig ng panaginip.', english: 'Dreamy, lost in thought', example: 'Nasa alapaap ang isip niya matapos basahin ang liham ng kanyang mahal.', translation: 'His mind was in the clouds after reading the letter from his beloved.' },
+    { word: 'Banaag', meaning: 'Unang liwanag o munting silahis bago sumapit ang lubos na kaliwanagan.', english: 'Faint light, glimmer', example: 'May banaag ng pag-asa sa kanyang mga mata kahit na mahirap ang sitwasyon.', translation: 'There was a glimmer of hope in her eyes despite the difficult situation.' },
+    { word: 'Silakbo', meaning: 'Biglaang pagbulwak ng matinding damdamin, karaniwa\u2019y galit o pagnanasa.', english: 'Sudden outburst of emotion', example: 'Ang silakbo ng kanyang galit ay nagulat sa lahat ng nasa silid.', translation: 'The outburst of his anger surprised everyone in the room.' },
+    { word: 'Marahuyo', meaning: 'Malubos na pagkabighani sa ganda o kahusayan ng isang bagay o tao.', english: 'Captivated, enchanted', example: 'Namarahuyo ako sa ganda ng tanawin sa taas ng bundok.', translation: 'I was captivated by the beauty of the view from the top of the mountain.' },
+    { word: 'Muni-muni', meaning: 'Malalim na pagninilay o pag-iisip, kadalasa\u2019y tahimik at nag-iisa.', english: 'Deep contemplation', example: 'Madalas siyang mag-muni-muni sa tabi ng dagat para makapag-isip nang malinaw.', translation: 'He often contemplates by the seaside to think clearly.' },
+    { word: 'Sapantaha', meaning: 'Hinuha o palagay na hindi pa napapatunayan.', english: 'Suspicion, conjecture', example: 'May sapantaha si Maria na may sorpresa para sa kanya dahil sa kakaibang kilos ng kanyang mga kaibigan.', translation: 'Maria suspected there was a surprise for her because of her friends\u2019 unusual behavior.' },
+    { word: 'Dalamhati', meaning: 'Matinding lungkot o hinagpis ng damdamin.', english: 'Deep sorrow, grief', example: 'Hindi maipaliwanag ang dalamhati ng ina nang mawala ang kanyang anak.', translation: 'The mother\u2019s grief could not be described when she lost her child.' },
+    { word: 'Ligalig', meaning: 'Kalagayan ng kabalisahan o kawalang-katiyakan ng loob.', english: 'Anxiety, uneasiness', example: 'Ligalig ang kanyang kalooban habang hinihintay ang resulta.', translation: 'His heart was uneasy while waiting for the result.' },
+    { word: 'Bigkis', meaning: 'Ang buklod o pagkakaisa ng dalawa o higit pang tao o bagay.', english: 'Unity, bond', example: 'Ang kanilang bigkis bilang magkapatid ay hindi nasira ng distansya.', translation: 'Their bond as siblings was not broken by distance.' },
+    { word: 'Lirip', meaning: 'Kaalamang natatanto nang walang tuwirang katibayan; kislap ng unawa.', english: 'Intuition, insight', example: 'Sa kanyang lirip, nahulaan niya agad ang tunay na dahilan.', translation: 'Through his intuition, he immediately guessed the real reason.' },
+    { word: 'Hinagpis', meaning: 'Matinding pananabik o pangungulila sa isang tao o bagay.', english: 'Intense longing, yearning', example: 'Ang hinagpis niya para sa kanyang bayan ay nadama sa bawat titik ng kanyang liham.', translation: 'His longing for his homeland was felt in every letter he wrote.' },
+    { word: 'Daluyong', meaning: 'Malaking alon sa dagat; matinding pagbabago o pagsalakay.', english: 'Great wave, surge', example: 'Sinalanta ng daluyong ang baybaying bayan.', translation: 'The great wave devastated the coastal town.' },
+    { word: 'Luningning', meaning: 'Matinding liwanag o ningning; taglay ang dangal at karangyaan.', english: 'Brilliance, radiance', example: 'Ang luningning ng kanyang tagumpay ay nakita ng buong bayan.', translation: 'The brilliance of his triumph was seen by the whole nation.' },
+    { word: 'Pagkamulat', meaning: 'Ang sandali ng pagkaunawa o pagkakaroon ng bagong kamalayan.', english: 'Awakening, realization', example: 'Ang kanyang pagkamulat sa katotohanan ay nagbago sa kanyang pananaw sa buhay.', translation: 'His awakening to the truth changed his outlook on life.' },
+    { word: 'Giting', meaning: 'Katapangan o kagitingan sa harap ng panganib.', english: 'Valor, bravery', example: 'Kilala ang mga bayani sa kanilang giting sa larangan ng digmaan.', translation: 'The heroes were known for their valor on the battlefield.' },
+    { word: 'Kayumanggi', meaning: 'Kulay-tsokolate ang balat; katangiang kaugnay ng lahing Pilipino.', english: 'Brown-skinned', example: 'Ipinagmamalaki niya ang kanyang kayumanggi na kutis.', translation: 'She takes pride in her brown skin.' },
+    { word: 'Dangal', meaning: 'Karangalan o puri ng isang tao; pagkakakilanlang dapat igalang.', english: 'Honor, dignity', example: 'Ipinagtanggol niya ang dangal ng kanyang pamilya.', translation: 'He defended the honor of his family.' },
+    { word: 'Lunos', meaning: 'Kalunos-lunos o nakakaawa; puno ng pagkalumbay.', english: 'Pitiful, heartbreaking', example: 'Lunos ang buhay ng batang naulila sa murang edad.', translation: 'Pitiful is the life of a child orphaned at a young age.' },
+    { word: 'Diwata', meaning: 'Espiritung mabuti sa alamat na naninirahan sa kalikasan.', english: 'Fairy, nature spirit', example: 'Sinasabing ang diwata ang nag-iingat sa gubat na iyon.', translation: 'It is said that the diwata guards that forest.' },
+    { word: 'Kariktan', meaning: 'Kagandahan o kaakit-akit na katangian.', english: 'Beauty, attractiveness', example: 'Hinangaan ng mga turista ang kariktan ng talon.', translation: 'The tourists admired the beauty of the waterfall.' },
+    { word: 'Kandili', meaning: 'Pangangalaga o proteksyon na ibinibigay sa isang tao.', english: 'Protection, care', example: 'Nasa ilalim ng kandili ng lolo ang mga apong ulila.', translation: 'The orphaned grandchildren are under their grandfather\u2019s care.' },
+    { word: 'Kapighatian', meaning: 'Matinding kahirapan o kalungkutan ng kalagayan.', english: 'Hardship, sorrow', example: 'Nagtiis sila ng kapighatian noong panahon ng digmaan.', translation: 'They endured hardship during the time of war.' },
+    { word: 'Karumata', meaning: 'Kalesang hila ng kabayo; sasakyang ginagamit noong unang panahon.', english: 'Horse-drawn carriage', example: 'Sumakay ang pamilya sa karumata patungo sa bayan.', translation: 'The family rode a horse-drawn carriage to town.' },
+    { word: 'Lasug-lasog', meaning: 'Wasak-wasak o durog-durog na kalagayan.', english: 'Shattered, torn apart', example: 'Lasug-lasog na ang kanilang tahanan matapos ang bagyo.', translation: 'Their home was already shattered after the storm.' },
+    { word: 'Liwasan', meaning: 'Malawak na bukas na lugar sa gitna ng bayan; parke o plasa.', english: 'Plaza, public square', example: 'Nagtitipon ang mga tao sa liwasan tuwing Linggo.', translation: 'People gather at the plaza every Sunday.' },
+    { word: 'Panlulumo', meaning: 'Pagkakaroon ng panghihina ng loob o katawan.', english: 'Weakening, discouragement', example: 'Dulot ng panlulumo, hindi na niya naitutuloy ang laban.', translation: 'Because of the weakening of his spirit, he could no longer continue the fight.' },
+    { word: 'Maringal', meaning: 'Marangya at may taglay na karangyaan sa anyo.', english: 'Majestic, grand', example: 'Maringal ang palasyo ng dating hari.', translation: 'The former king\u2019s palace is majestic.' },
+    { word: 'Mapaniil', meaning: 'Mapang-abuso o malupit sa pakikitungo sa iba.', english: 'Oppressive, abusive', example: 'Mapaniil ang pamahalaan ng mananakop.', translation: 'The colonial government was oppressive.' },
+    { word: 'Sinag', meaning: 'Silahis ng liwanag na nagmumula sa isang pinagmulan.', english: 'Ray of light', example: 'Sumisikat ang sinag ng araw sa bukang-liwayway.', translation: 'The sun\u2019s rays rise at dawn.' },
+    { word: 'Titig', meaning: 'Matamang tingin o pagmamasid sa isang bagay o tao.', english: 'Intense gaze, stare', example: 'Sinalubong niya ng titig ang kanyang kalaban.', translation: 'He met his rival with an intense gaze.' },
+    { word: 'Diwa', meaning: 'Kaluluwa o kakanyahan ng isang bagay; ang pinakabuod nito.', english: 'Essence, spirit', example: 'Ang kalayaan ang diwa ng kanilang laban.', translation: 'Freedom is the essence of their struggle.' },
+    { word: 'Malaya', meaning: 'Walang tanikala o hadlang; makapagpasya nang sarili.', english: 'Free, liberated', example: 'Ipinaglaban nila na maging malaya ang bansa.', translation: 'They fought for the country to be free.' },
+    { word: 'Dakila', meaning: 'Marangal at higit sa karaniwan; may taglay na kabutihang-loob.', english: 'Great, noble', example: 'Dakila ang sakripisyo ng mga bayani para sa bayan.', translation: 'The heroes\u2019 sacrifice for the country was great.' },
+    { word: 'Sigla', meaning: 'Kasiglahan o kasabikan sa paggawa ng isang bagay.', english: 'Vigor, enthusiasm', example: 'Punong-puno ng sigla ang mga bata sa palaro.', translation: 'The children were full of enthusiasm at the games.' },
+    { word: 'Adhika', meaning: 'Malaking pangarap o mithiin na nais makamit.', english: 'Aspiration, ambition', example: 'Ang kanyang adhika ay makapagtapos ng pag-aaral.', translation: 'His aspiration is to finish his studies.' },
+    { word: 'Balintuna', meaning: 'Kabaligtaran o salungat sa inaasahan.', english: 'Irony, contradiction', example: 'Balintuna na ang mayaman ay siyang malungkot sa kanila.', translation: 'It is ironic that the rich one is the saddest among them.' },
+    { word: 'Dayukdok', meaning: 'Matinding pagkagutom na parang hindi na mabusog.', english: 'Extreme hunger', example: 'Dayukdok ang mga bata matapos ang mahabang paglalakbay.', translation: 'The children were famished after the long journey.' },
+    { word: 'Hudyat', meaning: 'Palatandaan o senyas na nagpapahiwatig ng isang pangyayari.', english: 'Signal, sign', example: 'Ang tunog ng batingaw ang hudyat ng simula ng klase.', translation: 'The sound of the bell is the signal for class to begin.' },
+    { word: 'Kahalagahan', meaning: 'Antas ng kabutihan at dangal ng isang tao o bagay.', english: 'Worthiness, dignity', example: 'Pinatunayan niya ang kahalagahan ng kanyang pangalan.', translation: 'He proved the worthiness of his name.' },
+  ];
+
+  var SYNONYM_PAIRS = [
+    { word: 'Maririkit', synonym: 'Magaganda', others: ['Mababaho', 'Maiingay', 'Malalamig'] },
+    { word: 'Himatay', synonym: 'Mawalan ng malay', others: ['Magising', 'Lumakad', 'Kumain'] },
+    { word: 'Duyog', synonym: 'Pagsalakay', others: ['Pag-aayos', 'Paghahanda', 'Pagtulong'] },
+    { word: 'Badhi', synonym: 'Panghihina', others: ['Kalakasan', 'Katuwaan', 'Kalinisan'] },
+    { word: 'Anluwage', synonym: 'Karpintero', others: ['Mangingisda', 'Magbubukid', 'Mangangalakal'] },
+    { word: 'Bulwagan', synonym: 'Malaking silid', others: ['Maliit na hardin', 'Makitid na daan', 'Mataas na gusali'] },
+    { word: 'Gunitain', synonym: 'Alalahanin', others: ['Kalimutan', 'Itapon', 'Iwaksi'] },
+    { word: 'Kalinangan', synonym: 'Kultura', others: ['Kasuotan', 'Kagubatan', 'Kainan'] },
+    { word: 'Talinghaga', synonym: 'Matalinghagang pahayag', others: ['Tuwirang salita', 'Maikling tula', 'Mahabang kwento'] },
+    { word: 'Sinigbin', synonym: 'Nilagang lunas', others: ['Malamig na inumin', 'Matamis na kakanin', 'Sariwang prutas'] },
+    { word: 'Pamahingahan', synonym: 'Pahingahang lugar', others: ['Trabahuhan', 'Paaralan', 'Palengke'] },
+    { word: 'Katalonan', synonym: 'Babaeng manggagamot', others: ['Lalaking mandirigma', 'Batang magsasaka', 'Matandang mangingisda'] },
+    { word: 'Alitaptap', synonym: 'Nagliliwanag na kulisap', others: ['Madilim na ibon', 'Mabangong bulaklak', 'Malamig na hangin'] },
+    { word: 'Dalisay', synonym: 'Walang halong dumi', others: ['Marumi', 'Malabo', 'Magulo'] },
+    { word: 'Malaya', synonym: 'Walang tanikala', others: ['Nakatali', 'Nakakulong', 'Umaasa'] },
+    { word: 'Dakila', synonym: 'Marangal', others: ['Hamak', 'Mababa', 'Karaniwan'] },
+    { word: 'Giting', synonym: 'Katapangan', others: ['Kaduwagan', 'Kabagalan', 'Kapaguran'] },
+    { word: 'Sigla', synonym: 'Kasabikan', others: ['Kapaguran', 'Kalungkutan', 'Kahinaan'] },
+    { word: 'Dangal', synonym: 'Karangalan', others: ['Kahihiyan', 'Kayamanan', 'Kasikatan'] },
+    { word: 'Diwa', synonym: 'Kakanyahan', others: ['Anyo', 'Kulay', 'Bigat'] },
+    { word: 'Kariktan', synonym: 'Kagandahan', others: ['Kapangitan', 'Kabaguhan', 'Kalumaan'] },
+    { word: 'Ligalig', synonym: 'Kabalisahan', others: ['Kapanatagan', 'Kasiyahan', 'Kaginhawahan'] },
+    { word: 'Dalamhati', synonym: 'Matinding lungkot', others: ['Matinding tuwa', 'Matinding gutom', 'Matinding init'] },
+    { word: 'Hinagpis', synonym: 'Matinding pananabik', others: ['Matinding pagkabusog', 'Matinding pagod', 'Matinding lamig'] },
+    { word: 'Titig', synonym: 'Matamang tingin', others: ['Mabilisang lakad', 'Malakas na tawa', 'Mahinang bulong'] },
+    { word: 'Hudyat', synonym: 'Palatandaan', others: ['Kasinungalingan', 'Kabiguan', 'Kaguluhan'] },
+    { word: 'Bigkis', synonym: 'Pagkakaisa', others: ['Paghihiwalay', 'Pagtatalo', 'Pag-aalinlangan'] },
+    { word: 'Kandili', synonym: 'Pangangalaga', others: ['Pang-aabuso', 'Pagpapabaya', 'Panlilinlang'] },
+    { word: 'Mapaniil', synonym: 'Mapang-abuso', others: ['Mapagbigay', 'Mapagkumbaba', 'Matulungin'] },
+    { word: 'Liwasan', synonym: 'Plasa', others: ['Kagubatan', 'Karagatan', 'Kabundukan'] },
+  ];
+
+  var FILL_SENTENCES = [
+    { sentence: 'Ang mga ______ ay parang mga bituing nahulog sa kaparangan.', answer: 'alitaptap', others: ['alitaptap', 'badhi', 'batlag'], hint: 'Nagliliwanag sa gabi.' },
+    { sentence: 'Ang ating ______ ay may tungkuling pangalagaan ang wika.', answer: 'salinlahi', others: ['salinlahi', 'pantablay', 'duyog'], hint: 'Mga susunod na henerasyon.' },
+    { sentence: 'Sumakay kami sa ______ upang tumawid sa ilog.', answer: 'batlag', others: ['batlag', 'bulwagan', 'talinghaga'], hint: 'Sasakyang pandagat.' },
+    { sentence: 'Ang ______ ay pinagpipitaganan ng buong nayon.', answer: 'katalonan', others: ['katalonan', 'anluwage', 'manghihiram'], hint: 'Babaeng manggagamot noong unang panahon.' },
+    { sentence: 'Ang ______ ay nagbigay-daan sa kalayaan ng bansa.', answer: 'himagsikan', others: ['himagsikan', 'kalinangan', 'pamahingahan'], hint: 'Pakikibaka laban sa pang-aapi.' },
+    { sentence: 'Ginanap ang programa sa ______ ng paaralan.', answer: 'bulwagan', others: ['bulwagan', 'batlag', 'sinigbin'], hint: 'Malaking silid para sa pagpupulong.' },
+    { sentence: 'Ang ______ ng dahon ay gamot sa kanyang ubo.', answer: 'sinigbin', others: ['sinigbin', 'talinghaga', 'badhi'], hint: 'Nilagang tubig na may sangkap.' },
+    { sentence: 'Mahalagang pangalagaan ang ______ ng ating bayan.', answer: 'kalinangan', others: ['kalinangan', 'duyog', 'alitaptap'], hint: 'Kultura at kabihasnan.' },
+    { sentence: 'Ang ______ ay gumagawa ng matibay na mesa.', answer: 'anluwage', others: ['anluwage', 'katalonan', 'salinlahi'], hint: 'Manggagawa ng kahoy.' },
+    { sentence: 'Kailangan niyang ______ ang mga aral ng kanyang lolo.', answer: 'gunitain', others: ['gunitain', 'pamahingahan', 'manghihiram'], hint: 'Alalahanin ang nakaraan.' },
+    { sentence: 'Nagbayanihan ang buong ______ para linisin ang ilog.', answer: 'barangay', others: ['barangay', 'liwasan', 'bulwagan'], hint: 'Pinakamaliit na yunit ng pamahalaan.' },
+    { sentence: 'Sinta, ikaw ang ______ ng aking buhay.', answer: 'liwanag', others: ['liwanag', 'dalamhati', 'ligalig'], hint: 'Kasalungat ng dilim.' },
+    { sentence: 'Ang pagkikita nila ay ______, hindi lang simpleng pagkakataon.', answer: 'tadhana', others: ['tadhana', 'sapantaha', 'hinagpis'], hint: 'Itinakda ng kapalaran.' },
+    { sentence: 'Ang kanyang pagmamahal ay ______ at walang kondisyon.', answer: 'dalisay', others: ['dalisay', 'balintuna', 'lasug-lasog'], hint: 'Walang halong dumi o karumihan.' },
+    { sentence: 'May ______ ng pag-asa sa kanyang mga mata kahit mahirap ang sitwasyon.', answer: 'banaag', others: ['banaag', 'silakbo', 'titig'], hint: 'Unang liwanag bago sumapit ang lubos na kaliwanagan.' },
+    { sentence: 'Ang ______ ng kanyang galit ay nagulat sa lahat ng nasa silid.', answer: 'silakbo', others: ['silakbo', 'banaag', 'lirip'], hint: 'Biglaang pagbulwak ng damdamin.' },
+    { sentence: 'Madalas siyang mag-______ sa tabi ng dagat para makapag-isip nang malinaw.', answer: 'muni-muni', others: ['muni-muni', 'sapantaha', 'pagkamulat'], hint: 'Malalim na pagninilay.' },
+    { sentence: 'Ipinaglaban nila na maging ______ ang bansa.', answer: 'malaya', others: ['malaya', 'mapaniil', 'kayumanggi'], hint: 'Walang tanikala o hadlang.' },
+    { sentence: 'Ipinagtanggol niya ang ______ ng kanyang pamilya.', answer: 'dangal', others: ['dangal', 'sigla', 'diwata'], hint: 'Karangalan o puri ng isang tao.' },
+  ];
+
+  /* ============================================================
+     GAME MODES
+     ============================================================ */
+  var MODES = {
+    alab: {
+      id: 'alab',
+      title: 'Alab ng Talasalitaan',
+      subtitle: 'Pagsubok sa Kasingkahulugan',
+      desc: 'Piliin ang kasingkahulugan ng malalim na salita.',
+      howTo: 'Ipapakita ang isang malalim na salitang Tagalog. Piliin sa apat na pagpipilian ang salitang may kaparehong kahulugan.',
+      build: buildSynonymQuestions,
+    },
+    tinutukoy: {
+      id: 'tinutukoy',
+      title: 'Ano ang Tinutukoy',
+      subtitle: 'Pagtutugma ng Kahulugan',
+      desc: 'Basahin ang kahulugan, hanapin ang tamang salita.',
+      howTo: 'Babasahin mo ang isang kahulugan. Hanapin sa apat na pagpipilian ang salitang Tagalog na tumutukoy dito.',
+      build: buildDefinitionQuestions,
+    },
+    patlang: {
+      id: 'patlang',
+      title: 'Punan ang Patlang',
+      subtitle: 'Pagkumpleto ng Pangungusap',
+      desc: 'Kumpletuhin ang pangungusap gamit ang tamang salita.',
+      howTo: 'Kukumpletuhin mo ang isang pangungusap sa pamamagitan ng pagpili ng tamang salitang Tagalog.',
+      build: buildFillQuestions,
+    },
+  };
+
+  function buildSynonymQuestions(count) {
+    var pool = shuffle(SYNONYM_PAIRS).slice(0, count);
+    return pool.map(function (p) {
+      var options = shuffle([p.synonym].concat(p.others.slice(0, 3)));
+      var meta = WORDS.filter(function (w) { return w.word === p.word; })[0] || {};
+      return {
+        prompt: p.word,
+        promptLabel: 'Ano ang kasingkahulugan ng salitang ito?',
+        options: options,
+        answer: p.synonym,
+        explanation: meta.meaning || '',
+        english: meta.english || '',
+        example: meta.example || '',
+        translation: meta.translation || '',
+      };
+    });
+  }
+
+  function buildDefinitionQuestions(count) {
+    var pool = shuffle(WORDS).slice(0, count);
+    return pool.map(function (w) {
+      var others = shuffle(WORDS.filter(function (x) { return x.word !== w.word; }))
+        .slice(0, 3)
+        .map(function (x) { return x.word; });
+      var options = shuffle([w.word].concat(others));
+      return {
+        prompt: w.meaning,
+        promptLabel: 'Anong salita ang tinutukoy ng kahulugang ito?',
+        options: options,
+        answer: w.word,
+        explanation: w.meaning,
+        english: w.english,
+        example: w.example,
+        translation: w.translation,
+      };
+    });
+  }
+
+  function buildFillQuestions(count) {
+    var pool = shuffle(FILL_SENTENCES).slice(0, count);
+    return pool.map(function (s) {
+      var options = shuffle(s.others.slice(0, 4));
+      if (options.indexOf(s.answer) === -1) options[rand(options.length)] = s.answer;
+      options = shuffle(Array.from(new Set(options)));
+      return {
+        prompt: s.sentence.replace('______', '_____'),
+        promptLabel: 'Piliin ang salitang bubuo sa pangungusap.',
+        options: options,
+        answer: s.answer,
+        explanation: s.hint,
+        english: '',
+        example: s.sentence.replace('______', s.answer),
+        translation: '',
+      };
+    });
+  }
+
+  /* ============================================================
+     STATS / STREAK / BEST SCORES
+     ============================================================ */
+  var Stats = {
+    load: function () { return readJSON(scopedKey(LS.STATS), { played: 0, correct: 0, total: 0, words: {} }); },
+    save: function (s) { writeJSON(scopedKey(LS.STATS), s); },
+    recordCorrect: function (word) {
+      var s = this.load();
+      s.correct += 1; s.total += 1;
+      s.words[word] = (s.words[word] || 0) + 1;
+      this.save(s);
+    },
+    recordWrong: function () {
+      var s = this.load();
+      s.total += 1;
+      this.save(s);
+    },
+    recordGame: function () {
+      var s = this.load();
+      s.played += 1;
+      this.save(s);
+    },
+    accuracy: function () {
+      var s = this.load();
+      if (!s.total) return 0;
+      return Math.round((s.correct / s.total) * 100);
+    },
+  };
+
+  var Streak = {
+    load: function () { return readJSON(scopedKey(LS.STREAK), { count: 0, last: null }); },
+    bump: function () {
+      var today = new Date().toDateString();
+      var s = this.load();
+      if (s.last === today) return s.count;
+      var yesterday = new Date(Date.now() - 86400000).toDateString();
+      s.count = (s.last === yesterday) ? s.count + 1 : 1;
+      s.last = today;
+      writeJSON(scopedKey(LS.STREAK), s);
+      return s.count;
+    },
+    value: function () { return this.load().count || 0; },
+  };
+
+  var Best = {
+    key: function (mode, len) { return mode + ':' + len; },
+    load: function () { return readJSON(scopedKey(LS.BEST), {}); },
+    get: function (mode, len) { return this.load()[this.key(mode, len)] || 0; },
+    set: function (mode, len, score) {
+      var b = this.load();
+      var k = this.key(mode, len);
+      if (score > (b[k] || 0)) { b[k] = score; writeJSON(scopedKey(LS.BEST), b); return true; }
+      return false;
+    },
+  };
+
+  var WordOfDay = {
+    today: function () {
+      var key = new Date().toDateString();
+      var seed = key.split('').reduce(function (a, c) { return a + c.charCodeAt(0); }, 0);
+      return WORDS[seed % WORDS.length];
+    },
+  };
+
+  /* ============================================================
+     BACKUP — move a profile's progress to another phone.
+     Since there is no server, this is the offline stand-in for
+     "logging in on a different device": export a code on phone A,
+     paste it into "Ilagay ang Backup Code" on phone B.
+     ============================================================ */
+  var Backup = {
+    exportCode: function () {
+      var acc = Auth.current();
+      if (!acc) return null;
+      var accs = Auth.accounts();
+      var account = accs[acc.id];
+      var payload = {
+        v: 1,
+        account: account,
+        stats: readJSON(scopedKey(LS.STATS), null),
+        streak: readJSON(scopedKey(LS.STREAK), null),
+        best: readJSON(scopedKey(LS.BEST), null),
+      };
+      try {
+        return 'TLST1-' + btoa(unescape(encodeURIComponent(JSON.stringify(payload))));
+      } catch (e) {
+        return null;
+      }
+    },
+
+    parseCode: function (code) {
+      var trimmed = String(code || '').trim();
+      if (trimmed.indexOf('TLST1-') !== 0) throw new Error('Hindi valid na backup code.');
+      var raw = trimmed.slice(6);
+      var json;
+      try {
+        json = decodeURIComponent(escape(atob(raw)));
+      } catch (e) {
+        throw new Error('Hindi mabasa ang backup code. Siguraduhing kumpleto ang pagkopya.');
+      }
+      var payload;
+      try {
+        payload = JSON.parse(json);
+      } catch (e) {
+        throw new Error('Sira ang laman ng backup code.');
+      }
+      if (!payload || !payload.account || !payload.account.username) {
+        throw new Error('Hindi kumpleto ang backup code.');
+      }
+      return payload;
+    },
+
+    /* Imports a backup: recreates the account (with its original
+       password hash, unchanged) on this device and restores its
+       stats/streak/best, then signs into it. */
+    importCode: function (code) {
+      var payload;
+      try {
+        payload = this.parseCode(code);
+      } catch (e) {
+        return Promise.reject(e);
+      }
+      var account = payload.account;
+      var accs = Auth.accounts();
+      accs[account.id] = account;
+      Auth.saveAccounts(accs);
+      Auth._current = { id: account.id, username: account.username };
+      writeJSON(LS.ACTIVE, account.id);
+      if (payload.stats) writeJSON(scopedKey(LS.STATS), payload.stats);
+      if (payload.streak) writeJSON(scopedKey(LS.STREAK), payload.streak);
+      if (payload.best) writeJSON(scopedKey(LS.BEST), payload.best);
+      return Promise.resolve(Auth._current);
+    },
+  };
+
+  /* ============================================================
+     TOAST
+     ============================================================ */
+  function toast(message, kind) {
+    var host = $('#toastHost');
+    if (!host) return;
+    var el = document.createElement('div');
+    var tone = kind === 'error'
+      ? 'bg-maroon text-white'
+      : kind === 'warn'
+      ? 'bg-[#8A6D3B] text-white'
+      : 'bg-ink text-paper';
+    el.className = 'pointer-events-auto select-none px-4 py-2.5 rounded-lg text-[13px] font-medium shadow-lg ' + tone;
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(8px)';
+    el.style.transition = 'opacity .2s ease, transform .2s ease';
+    el.textContent = message;
+    host.appendChild(el);
+    requestAnimationFrame(function () {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    });
+    setTimeout(function () {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(8px)';
+      setTimeout(function () { el.remove(); }, 220);
+    }, 1800);
+  }
+
+  /* ============================================================
+     BOTTOM SHEET
+     ============================================================ */
+  var Sheet = {
+    open: function (markup, opts) {
+      var backdrop = $('#sheetBackdrop');
+      var panel = $('#sheetPanel');
+      var body = $('#sheetBody');
+      if (!backdrop || !panel || !body) return;
+      this._opts = opts || {};
+      body.innerHTML = markup;
+      backdrop.classList.remove('hidden');
+      requestAnimationFrame(function () {
+        backdrop.classList.remove('opacity-0');
+        panel.classList.remove('translate-y-4', 'sm:scale-95', 'opacity-0');
+      });
+      backdrop.onclick = function (e) { if (e.target === backdrop) Sheet.close(); };
+      document.body.style.overflow = 'hidden';
+    },
+    close: function () {
+      var backdrop = $('#sheetBackdrop');
+      var panel = $('#sheetPanel');
+      var body = $('#sheetBody');
+      if (!backdrop || !panel || !body) return;
+      backdrop.classList.add('opacity-0');
+      panel.classList.add('translate-y-4', 'sm:scale-95', 'opacity-0');
+      var opts = this._opts || {};
+      setTimeout(function () {
+        backdrop.classList.add('hidden');
+        body.innerHTML = '';
+        if (typeof opts.onClose === 'function') opts.onClose();
+      }, 200);
+      document.body.style.overflow = '';
+    },
+  };
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      var backdrop = $('#sheetBackdrop');
+      if (backdrop && !backdrop.classList.contains('hidden')) Sheet.close();
+    }
+  });
+
+  /* ============================================================
+     SCREEN MANAGER
+     ============================================================ */
+  var Screens = {
+    current: null,
+    show: function (name, markupFn) {
+      var host = $('#screen');
+      if (!host) return;
+      host.innerHTML = markupFn();
+      var first = host.firstElementChild;
+      if (first) first.classList.add('fade-up');
+      this.current = name;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
+  };
+
+  /* ============================================================
+     GAME ENGINE
+     ============================================================ */
+  var Game = {
+    mode: null,
+    length: 10,
+    questions: [],
+    index: 0,
+    score: 0,
+    streak: 0,
+    correctCount: 0,
+    wrongCount: 0,
+    timeLeft: 10,
+    timerId: null,
+    answered: false,
+    history: [],
+
+    start: function (modeId, length) {
+      var mode = MODES[modeId];
+      if (!mode) return;
+      this.mode = mode;
+      this.length = length;
+      this.questions = mode.build(length);
+      this.index = 0;
+      this.score = 0;
+      this.streak = 0;
+      this.correctCount = 0;
+      this.wrongCount = 0;
+      this.history = [];
+      Stats.recordGame();
+      this.renderQuestion();
+    },
+
+    renderQuestion: function () {
+      this.answered = false;
+      this.timeLeft = 10;
+      var q = this.questions[this.index];
+      if (!q) { this.finish(); return; }
+      Screens.show('game', function () { return Game.questionMarkup(q); });
+      this.attachQuestionHandlers();
+      this.startTimer();
+    },
+
+    startTimer: function () {
+      var self = this;
+      clearInterval(this.timerId);
+      var tick = function () {
+        if (self.answered) return;
+        self.timeLeft = Math.max(0, self.timeLeft - 0.1);
+        var bar = $('#timerBar');
+        var clock = $('#timerClock');
+        if (bar) {
+          bar.style.width = (self.timeLeft / 10 * 100) + '%';
+          bar.className = 'timer-fill h-full rounded-full ' +
+            (self.timeLeft > 6 ? 'bg-sage' : self.timeLeft > 3 ? 'bg-[#B98A2E]' : 'bg-maroon');
+        }
+        if (clock) clock.textContent = Math.ceil(self.timeLeft);
+        if (self.timeLeft <= 0) {
+          clearInterval(self.timerId);
+          self.handleTimeout();
+        }
+      };
+      this.timerId = setInterval(tick, 100);
+      tick();
+    },
+
+    handleTimeout: function () {
+      if (this.answered) return;
+      this.answered = true;
+      var q = this.questions[this.index];
+      this.streak = 0;
+      this.wrongCount += 1;
+      Stats.recordWrong();
+      this.history.push({ prompt: q.prompt, answer: q.answer, correct: false, timedOut: true });
+      this.revealAnswer(q, null);
+    },
+
+    handleAnswer: function (choice, btn) {
+      if (this.answered) return;
+      this.answered = true;
+      clearInterval(this.timerId);
+      var q = this.questions[this.index];
+      var correct = choice === q.answer;
+
+      if (correct) {
+        var speedBonus = Math.round(this.timeLeft * 6);
+        var difficultyBonus = 10;
+        var gained = 50 + speedBonus + difficultyBonus + (this.streak * 5);
+        this.score += gained;
+        this.streak += 1;
+        this.correctCount += 1;
+        Stats.recordCorrect(q.answer);
+        this.history.push({ prompt: q.prompt, answer: q.answer, correct: true, gained: gained });
+        if (btn) btn.classList.add('!bg-sage', '!border-sage', '!text-white');
+        toast('+' + gained + ' puntos', 'success');
+      } else {
+        this.streak = 0;
+        this.wrongCount += 1;
+        Stats.recordWrong();
+        this.history.push({ prompt: q.prompt, answer: q.answer, correct: false, chosen: choice });
+        if (btn) { btn.classList.add('!bg-maroon', '!border-maroon', '!text-white'); btn.classList.add('shake'); }
+        toast('Mali. Tandaan ang salita.', 'error');
+      }
+      this.revealAnswer(q, choice);
+    },
+
+    revealAnswer: function (q, chosen) {
+      $$('[data-option]').forEach(function (el) {
+        var val = el.getAttribute('data-option');
+        if (val === q.answer) el.classList.add('!bg-sage', '!border-sage', '!text-white');
+        el.disabled = true;
+        el.classList.add('cursor-default');
+      });
+
+      var host = $('#explanationHost');
+      if (host) {
+        var isCorrect = chosen === q.answer;
+        var timedOut = chosen === null;
+        var heading = timedOut ? 'Ubos ang oras' : (isCorrect ? 'Tama' : 'Mali');
+        var headColor = timedOut ? 'text-[#8A6D3B]' : (isCorrect ? 'text-sage' : 'text-maroon');
+
+        var html = '<div class="fade-up border border-[#E5DFD1] bg-white rounded-xl p-4 sm:p-5 space-y-3">';
+        html += '<p class="text-[13px] font-semibold uppercase tracking-wide ' + headColor + '">' + esc(heading) + '</p>';
+        html += '<div class="space-y-1">';
+        html += '<p class="serif text-[17px] font-semibold text-ink">' + esc(q.answer) +
+          (q.english ? ' <span class="text-[13px] font-normal text-[#8A8378]">&middot; ' + esc(q.english) + '</span>' : '') + '</p>';
+        if (q.explanation) html += '<p class="text-[13.5px] text-[#57534A] leading-relaxed">' + esc(q.explanation) + '</p>';
+        html += '</div>';
+        if (q.example) {
+          html += '<div class="bg-paper border border-[#E5DFD1] rounded-lg px-3.5 py-3">';
+          html += '<p class="text-[10px] font-semibold uppercase tracking-wide text-[#9A9384] mb-1">Halimbawa</p>';
+          html += '<p class="text-[13px] italic serif text-[#3A362F] leading-relaxed">' + esc(q.example) + '</p>';
+          if (q.translation) html += '<p class="text-[12px] text-[#8A8378] mt-1">' + esc(q.translation) + '</p>';
+          html += '</div>';
+        }
+        html += '<button id="nextBtn" class="w-full rounded-lg bg-ink text-paper font-medium text-[14px] py-3 hover:bg-[#3A362F] active:scale-[.99] transition mt-1 focus-ring">' +
+          (this.index + 1 >= this.length ? 'Tapusin' : 'Susunod') + '</button>';
+        html += '</div>';
+
+        host.innerHTML = html;
+        host.classList.remove('hidden');
+
+        var next = $('#nextBtn');
+        var self = this;
+        if (next) {
+          next.addEventListener('click', function () {
+            host.classList.add('hidden');
+            self.index += 1;
+            if (self.index >= self.length) self.finish();
+            else self.renderQuestion();
+          });
+        }
+      }
+
+      var scoreEl = $('#gameScore');
+      if (scoreEl) scoreEl.textContent = this.score;
+    },
+
+    finish: function () {
+      var mode = this.mode;
+      var pct = this.length ? Math.round((this.correctCount / this.length) * 100) : 0;
+      var isBest = Best.set(mode.id, this.length, this.score);
+      var best = Best.get(mode.id, this.length);
+      Streak.bump();
+
+      var historyRows = this.history.map(function (h) {
+        var icon = h.correct ? CHECK_SVG : CROSS_SVG;
+        var color = h.correct ? 'text-sage' : 'text-maroon';
+        return '<div class="flex items-start gap-3 border border-[#E5DFD1] bg-white rounded-lg px-3.5 py-3">' +
+          '<span class="' + color + ' mt-0.5 shrink-0">' + icon + '</span>' +
+          '<div class="min-w-0 flex-1">' +
+            '<p class="text-[13px] text-[#57534A] truncate">' + esc(h.prompt) + '</p>' +
+            '<p class="text-[13.5px] font-semibold text-ink mt-0.5">' + esc(h.answer) + '</p>' +
+          '</div>' +
+          (h.correct ? '<span class="text-[12px] font-semibold text-sage shrink-0">+' + h.gained + '</span>' : '') +
+        '</div>';
+      }).join('');
+
+      Screens.show('results', function () {
+        var html = '<div class="space-y-6">';
+        html += '<div class="text-center pt-2">';
+        html += '<p class="text-[11px] font-semibold uppercase tracking-wide text-[#9A9384]">' + esc(mode.title) + '</p>';
+        html += '<p class="serif text-[44px] font-semibold leading-none text-ink mt-2">' + Game.score + '</p>';
+        html += '<p class="text-[12.5px] text-[#8A8378] mt-1.5">puntos</p>';
+        html += '</div>';
+
+        html += '<div class="grid grid-cols-3 gap-3">';
+        html += '<div class="border border-[#E5DFD1] rounded-xl p-3.5 text-center bg-white">' +
+          '<p class="text-[20px] font-semibold text-sage">' + Game.correctCount + '</p>' +
+          '<p class="text-[10px] font-semibold uppercase tracking-wide text-[#9A9384] mt-1">Tama</p></div>';
+        html += '<div class="border border-[#E5DFD1] rounded-xl p-3.5 text-center bg-white">' +
+          '<p class="text-[20px] font-semibold text-maroon">' + Game.wrongCount + '</p>' +
+          '<p class="text-[10px] font-semibold uppercase tracking-wide text-[#9A9384] mt-1">Mali</p></div>';
+        html += '<div class="border border-[#E5DFD1] rounded-xl p-3.5 text-center bg-white">' +
+          '<p class="text-[20px] font-semibold text-ink">' + pct + '%</p>' +
+          '<p class="text-[10px] font-semibold uppercase tracking-wide text-[#9A9384] mt-1">Tumpak</p></div>';
+        html += '</div>';
+
+        html += isBest
+          ? '<div class="bg-[#F1E9D8] border border-[#DCCBA0] rounded-xl px-4 py-3 text-center"><p class="text-[13px] font-semibold text-[#7A5A1E]">Bagong pinakamataas na iskor</p></div>'
+          : '<div class="border border-[#E5DFD1] rounded-xl px-4 py-3 text-center"><p class="text-[12.5px] text-[#8A8378]">Pinakamataas: <span class="font-semibold text-ink">' + best + '</span></p></div>';
+
+        html += '<div class="space-y-2">';
+        html += '<p class="text-[11px] font-semibold uppercase tracking-wide text-[#9A9384] px-0.5">Pagsusuri ng Sagot</p>';
+        html += '<div class="space-y-2">' + (historyRows || '<p class="text-[13px] text-[#9A9384] text-center py-4">Walang sagot.</p>') + '</div>';
+        html += '</div>';
+
+        html += '<div class="space-y-2.5 pt-1">';
+        html += '<button id="playAgainBtn" class="w-full rounded-xl bg-ink text-paper font-medium text-[14.5px] py-3.5 hover:bg-[#3A362F] active:scale-[.99] transition focus-ring">Maglaro Muli &middot; ' + esc(mode.title) + '</button>';
+        html += '<div class="grid grid-cols-2 gap-2.5">';
+        html += '<button id="changeLenBtn" class="border border-[#E5DFD1] rounded-xl font-medium text-[13px] py-3 hover:bg-white transition focus-ring">Baguhin ang Haba</button>';
+        html += '<button id="homeBtn" class="border border-[#E5DFD1] rounded-xl font-medium text-[13px] py-3 hover:bg-white transition focus-ring">Bumalik sa Home</button>';
+        html += '</div></div>';
+
+        html += '</div>';
+        return html;
+      });
+
+      var again = $('#playAgainBtn');
+      if (again) again.addEventListener('click', function () { Game.start(mode.id, Game.length); });
+      var changeLen = $('#changeLenBtn');
+      if (changeLen) changeLen.addEventListener('click', function () { Home.renderModeSheet(mode.id); });
+      var home = $('#homeBtn');
+      if (home) home.addEventListener('click', function () { Home.render(); });
+    },
+
+    questionMarkup: function (q) {
+      var mode = this.mode;
+      var pct = (this.index / this.length) * 100;
+
+      var html = '<div class="space-y-4">';
+      html += '<div class="flex items-center justify-between gap-3">';
+      html += '<button id="quitBtn" class="w-9 h-9 rounded-lg grid place-items-center border border-[#E5DFD1] hover:bg-white transition focus-ring" aria-label="Lumabas">' +
+        '<svg viewBox="0 0 24 24" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>';
+      html += '<div class="flex-1 text-center">';
+      html += '<p class="text-[10.5px] font-semibold uppercase tracking-wide text-[#9A9384]">' + esc(mode.title) + '</p>';
+      html += '<p class="text-[11.5px] text-[#8A8378] mt-0.5">Tanong ' + (this.index + 1) + ' / ' + this.length + '</p>';
+      html += '</div>';
+      html += '<div class="rounded-lg bg-white border border-[#E5DFD1] px-3 py-1.5 text-center min-w-[54px]">' +
+        '<p class="text-[9px] font-semibold uppercase tracking-wide text-[#9A9384] leading-none">Puntos</p>' +
+        '<p id="gameScore" class="text-[14px] font-semibold leading-tight mt-0.5">' + this.score + '</p></div>';
+      html += '</div>';
+
+      html += '<div class="h-1 rounded-full bg-[#E5DFD1] overflow-hidden">' +
+        '<div class="h-full rounded-full bg-maroon transition-all duration-300" style="width:' + pct + '%"></div></div>';
+
+      html += '<div class="flex items-center gap-3">';
+      html += '<div class="flex-1 h-1.5 rounded-full bg-[#E5DFD1] overflow-hidden">' +
+        '<div id="timerBar" class="timer-fill h-full rounded-full bg-sage" style="width:100%"></div></div>';
+      html += '<div class="flex items-center gap-1.5 shrink-0 text-[#57534A]">' + CLOCK_SVG +
+        '<span id="timerClock" class="text-[13px] font-semibold tabular-nums">10</span></div>';
+      html += '</div>';
+
+      html += '<div class="border border-[#E5DFD1] bg-white rounded-2xl p-6 sm:p-7">';
+      html += '<p class="text-[10.5px] font-semibold uppercase tracking-wide text-[#9A9384] mb-3">' + esc(q.promptLabel) + '</p>';
+      html += '<p class="serif text-[21px] sm:text-[25px] font-semibold leading-snug text-ink">' + esc(q.prompt) + '</p>';
+      html += '</div>';
+
+      html += '<div id="optionsHost" class="grid gap-2.5">';
+      var letters = ['A', 'B', 'C', 'D'];
+      q.options.forEach(function (opt, i) {
+        html += '<button data-option="' + esc(opt) + '" ' +
+          'class="opt-btn w-full flex items-center gap-3 rounded-xl border border-[#E5DFD1] bg-white px-4 py-3.5 text-left hover:border-maroon active:scale-[.99] transition disabled:opacity-100 focus-ring">' +
+          '<span class="w-7 h-7 rounded-md bg-paper border border-[#E5DFD1] grid place-items-center text-[12px] font-semibold text-[#8A8378] shrink-0">' + letters[i] + '</span>' +
+          '<span class="flex-1 text-[14.5px] font-medium text-ink leading-snug">' + esc(opt) + '</span>' +
+          '</button>';
+      });
+      html += '</div>';
+
+      html += '<div id="explanationHost" class="hidden"></div>';
+      html += '<div class="pt-1"><button id="skipBtn" class="w-full rounded-lg text-[12.5px] font-medium text-[#9A9384] hover:text-[#57534A] py-2 transition">Laktawan ang tanong</button></div>';
+      html += '</div>';
+      return html;
+    },
+
+    attachQuestionHandlers: function () {
+      var self = this;
+      var optionsHost = $('#optionsHost');
+      if (optionsHost) {
+        optionsHost.addEventListener('click', function (e) {
+          var btn = e.target.closest ? e.target.closest('[data-option]') : null;
+          if (!btn || btn.disabled) return;
+          self.handleAnswer(btn.getAttribute('data-option'), btn);
+        });
+      }
+
+      var skip = $('#skipBtn');
+      if (skip) {
+        skip.addEventListener('click', function () {
+          if (self.answered) return;
+          self.answered = true;
+          clearInterval(self.timerId);
+          var current = self.questions[self.index];
+          self.streak = 0;
+          self.wrongCount += 1;
+          Stats.recordWrong();
+          self.history.push({ prompt: current.prompt, answer: current.answer, correct: false, timedOut: true });
+          self.revealAnswer(current, null);
+        });
+      }
+
+      var quit = $('#quitBtn');
+      if (quit) {
+        quit.addEventListener('click', function () {
+          Home.confirm('Lumabas sa laro?', 'Mawawala ang kasalukuyang puntos at hindi ito maibabalik.', 'Lumabas').then(function (ok) {
+            if (ok) {
+              clearInterval(self.timerId);
+              Home.render();
+            }
+          });
+        });
+      }
+    },
+  };
+
+  /* ============================================================
+     HOME SCREEN
+     ============================================================ */
+  var Home = {
+    render: function () {
+      var wotd = WordOfDay.today();
+      var stats = Stats.load();
+      var streak = Streak.value();
+      var accuracy = Stats.accuracy();
+      var modes = Object.keys(MODES).map(function (k) { return MODES[k]; });
+
+      Screens.show('home', function () {
+        var html = '<div class="space-y-8">';
+
+        html += '<section>';
+        html += '<p class="text-[11px] font-semibold uppercase tracking-wide text-maroon">Pambungad</p>';
+        html += '<h1 class="serif text-[28px] sm:text-[34px] font-semibold leading-[1.15] text-ink mt-2">Saliksikin ang malalim na talasalitaang Filipino.</h1>';
+        html += '<p class="text-[13.5px] text-[#57534A] leading-relaxed mt-3 max-w-md">Sariwain ang mga salitang Tagalog na unti-unting nakakalimutan sa gitna ng paglaganap ng Ingles sa pang-araw-araw na pananalita.</p>';
+        html += '<div class="flex flex-wrap gap-x-5 gap-y-1.5 mt-4 text-[12.5px] text-[#8A8378]">';
+        html += '<span>' + (stats.played || 0) + ' laro nailaro</span>';
+        html += '<span>' + accuracy + '% katumpakan</span>';
+        if (streak > 0) html += '<span>' + streak + ' araw na sunod-sunod</span>';
+        html += '</div></section>';
+
+        html += '<section class="space-y-3">';
+        html += '<div class="flex items-center justify-between">';
+        html += '<h2 class="text-[11px] font-semibold uppercase tracking-wide text-[#9A9384]">Salita ng Araw</h2>';
+        html += '<span class="text-[11.5px] text-[#9A9384]">' + new Date().toLocaleDateString('fil-PH', { month: 'long', day: 'numeric' }) + '</span>';
+        html += '</div>';
+        html += '<div class="border border-[#E5DFD1] bg-white rounded-2xl overflow-hidden card-lift">';
+        html += '<div class="px-5 sm:px-6 pt-5 pb-4 flex items-start justify-between gap-3">';
+        html += '<div class="min-w-0">';
+        html += '<h3 class="serif text-[26px] sm:text-[30px] font-semibold text-ink leading-none">' + esc(wotd.word) + '</h3>';
+        html += '<p class="text-[12.5px] font-medium text-maroon mt-2">' + esc(wotd.english) + '</p>';
+        html += '<p class="text-[13.5px] text-[#57534A] leading-relaxed mt-3">' + esc(wotd.meaning) + '</p>';
+        html += '</div>';
+        html += '<button id="speakBtn" class="w-10 h-10 rounded-lg grid place-items-center border border-[#E5DFD1] hover:bg-paper transition shrink-0 focus-ring" aria-label="Pakinggan">' +
+          '<svg viewBox="0 0 24 24" class="w-[17px] h-[17px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>';
+        html += '</div>';
+        html += '<div class="bg-paper border-t border-[#E5DFD1] px-5 sm:px-6 py-4">';
+        html += '<p class="text-[10px] font-semibold uppercase tracking-wide text-[#9A9384] mb-1.5">Halimbawa</p>';
+        html += '<p class="serif text-[13.5px] italic text-[#3A362F] leading-relaxed">' + esc(wotd.example) + '</p>';
+        html += '<p class="text-[12px] text-[#8A8378] mt-1.5">' + esc(wotd.translation) + '</p>';
+        html += '</div></div></section>';
+
+        html += '<section class="space-y-3">';
+        html += '<h2 class="text-[11px] font-semibold uppercase tracking-wide text-[#9A9384]">Mga Larong Salita</h2>';
+        html += '<div class="space-y-2.5">';
+        modes.forEach(function (m) {
+          var best = Best.get(m.id, 10);
+          html += '<button data-mode="' + m.id + '" class="w-full text-left border border-[#E5DFD1] bg-white rounded-2xl p-4 sm:p-5 card-lift active:scale-[.995] transition focus-ring">';
+          html += '<div class="flex items-center gap-4">';
+          html += '<div class="flex-1 min-w-0">';
+          html += '<p class="serif text-[16.5px] font-semibold text-ink leading-tight">' + esc(m.title) + '</p>';
+          html += '<p class="text-[11px] font-medium uppercase tracking-wide text-[#9A9384] mt-1">' + esc(m.subtitle) + '</p>';
+          html += '<p class="text-[12.5px] text-[#57534A] mt-1.5 leading-snug">' + esc(m.desc) + '</p>';
+          html += '</div>';
+          html += '<div class="shrink-0 text-right">';
+          html += best > 0
+            ? '<p class="text-[16px] font-semibold text-ink">' + best + '</p><p class="text-[9px] font-semibold uppercase tracking-wide text-[#9A9384]">rekord</p>'
+            : '<span class="text-[#C7C0AF]">' + ARROW_SVG + '</span>';
+          html += '</div></div></button>';
+        });
+        html += '</div></section>';
+
+        html += '<section class="space-y-3">';
+        html += '<h2 class="text-[11px] font-semibold uppercase tracking-wide text-[#9A9384]">Iyong Paglalakbay</h2>';
+        html += '<div class="grid grid-cols-3 gap-3">';
+        html += '<div class="border border-[#E5DFD1] bg-white rounded-xl p-3.5 text-center"><p class="text-[20px] font-semibold text-ink">' + (stats.correct || 0) + '</p><p class="text-[10px] font-semibold uppercase tracking-wide text-[#9A9384] mt-1">Tamang Sagot</p></div>';
+        html += '<div class="border border-[#E5DFD1] bg-white rounded-xl p-3.5 text-center"><p class="text-[20px] font-semibold text-ink">' + Object.keys(stats.words || {}).length + '</p><p class="text-[10px] font-semibold uppercase tracking-wide text-[#9A9384] mt-1">Salitang Natutunan</p></div>';
+        html += '<div class="border border-[#E5DFD1] bg-white rounded-xl p-3.5 text-center"><p class="text-[20px] font-semibold text-ink">' + accuracy + '%</p><p class="text-[10px] font-semibold uppercase tracking-wide text-[#9A9384] mt-1">Katumpakan</p></div>';
+        html += '</div></section>';
+
+        html += '<section class="border border-dashed border-[#D8D2C4] rounded-2xl p-5 text-center">';
+        html += '<p class="text-[13px] font-semibold text-ink">Nais mo pang mag-aral?</p>';
+        html += '<p class="text-[12.5px] text-[#8A8378] mt-1 leading-relaxed">Tingnan ang buong talasimpanan at alamin ang kahulugan ng bawat salita.</p>';
+        html += '<button id="dictionaryBtn" class="mt-3.5 border border-[#E5DFD1] rounded-lg px-4 py-2.5 text-[13px] font-medium hover:bg-white transition focus-ring">Buksan ang Talasimpanan</button>';
+        html += '</section>';
+
+        html += '</div>';
+        return html;
+      });
+
+      $$('[data-mode]').forEach(function (btn) {
+        btn.addEventListener('click', function () { Home.renderModeSheet(btn.getAttribute('data-mode')); });
+      });
+      var speak = $('#speakBtn');
+      if (speak) speak.addEventListener('click', function () { Home.speak(wotd.word); });
+      var dict = $('#dictionaryBtn');
+      if (dict) dict.addEventListener('click', function () { Home.showDictionary(); });
+      Home.refreshStreakPill(streak);
+      Home.refreshAccountLabel();
+    },
+
+    refreshStreakPill: function (value) {
+      var pill = $('#streakPill');
+      var count = $('#streakCount');
+      var v = typeof value === 'number' ? value : Streak.value();
+      if (count) count.textContent = v;
+      if (pill) {
+        pill.classList.toggle('hidden', v <= 0);
+        pill.classList.toggle('flex', v > 0);
+      }
+    },
+
+    refreshAccountLabel: function () {
+      var label = $('#accountLabel');
+      if (!label) return;
+      var acc = Auth.current();
+      if (!acc) { label.textContent = 'Mag-login'; return; }
+      label.textContent = acc.id === 'guest' ? 'Bisita' : acc.username;
+    },
+
+    speak: function (word) {
+      try {
+        if (!('speechSynthesis' in window)) { toast('Hindi suportado ng browser na ito.', 'warn'); return; }
+        var u = new SpeechSynthesisUtterance(word);
+        u.lang = 'fil-PH'; u.rate = 0.85; u.pitch = 1;
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(u);
+      } catch (e) { toast('Hindi maaaring bigkasin ang salita.', 'warn'); }
+    },
+
+    renderModeSheet: function (modeId) {
+      var mode = MODES[modeId];
+      if (!mode) return;
+      var lengths = [
+        { n: 5, label: 'Mabilisang Laro', desc: '5 tanong, halos isang minuto' },
+        { n: 10, label: 'Karaniwan', desc: '10 tanong, mga dalawang minuto' },
+        { n: 15, label: 'Matinding Hamon', desc: '15 tanong, mga tatlong minuto' },
+      ];
+
+      var rows = lengths.map(function (len) {
+        var best = Best.get(mode.id, len.n);
+        return '<button data-length="' + len.n + '" class="w-full flex items-center gap-3.5 border border-[#E5DFD1] bg-white rounded-xl px-4 py-3.5 text-left hover:border-maroon active:scale-[.99] transition focus-ring">' +
+          '<span class="flex-1 min-w-0">' +
+            '<span class="block text-[14.5px] font-semibold text-ink leading-tight">' + len.label + '</span>' +
+            '<span class="block text-[11.5px] text-[#8A8378] mt-0.5">' + len.desc + '</span>' +
+          '</span>' +
+          '<span class="shrink-0 text-right">' +
+            (best > 0
+              ? '<span class="block text-[14px] font-semibold text-ink">' + best + '</span><span class="block text-[9px] font-semibold uppercase tracking-wide text-[#9A9384]">rekord</span>'
+              : '<span class="text-[#C7C0AF]">' + ARROW_SVG + '</span>') +
+          '</span></button>';
+      }).join('');
+
+      Sheet.open(
+        '<div class="space-y-4">' +
+          '<div>' +
+            '<p class="serif text-[18px] font-semibold text-ink leading-tight">' + esc(mode.title) + '</p>' +
+            '<p class="text-[11px] font-medium uppercase tracking-wide text-[#9A9384] mt-1">' + esc(mode.subtitle) + '</p>' +
+          '</div>' +
+          '<p class="text-[13px] text-[#57534A] leading-relaxed">' + esc(mode.desc) + '</p>' +
+          '<div class="bg-paper border border-[#E5DFD1] rounded-xl px-4 py-3">' +
+            '<p class="text-[10.5px] font-semibold uppercase tracking-wide text-[#9A9384] mb-1">Paano Laruin</p>' +
+            '<p class="text-[12.5px] text-[#57534A] leading-relaxed">' + esc(mode.howTo) + '</p>' +
+          '</div>' +
+          '<div class="space-y-2.5">' +
+            '<p class="text-[11px] font-semibold uppercase tracking-wide text-[#9A9384]">Piliin ang Haba</p>' +
+            '<div class="space-y-2.5">' + rows + '</div>' +
+          '</div>' +
+        '</div>'
+      );
+
+      $$('[data-length]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var n = parseInt(btn.getAttribute('data-length'), 10);
+          Sheet.close();
+          Game.start(mode.id, n);
+        });
+      });
+    },
+
+    showDictionary: function () {
+      var all = WORDS.slice().sort(function (a, b) { return a.word.localeCompare(b.word, 'fil'); });
+      var seen = Stats.load().words || {};
+
+      var rows = all.map(function (w) {
+        var know = seen[w.word];
+        return '<button data-word="' + esc(w.word) + '" class="w-full text-left border border-[#E5DFD1] bg-white rounded-xl px-4 py-3 hover:border-maroon transition focus-ring">' +
+          '<div class="flex items-center gap-3">' +
+            '<span class="flex-1 min-w-0">' +
+              '<span class="block serif text-[15px] font-semibold text-ink truncate">' + esc(w.word) + '</span>' +
+              '<span class="block text-[11.5px] text-[#8A8378] mt-0.5 truncate">' + esc(w.english) + '</span>' +
+            '</span>' +
+            (know ? '<span class="shrink-0 text-sage">' + CHECK_SVG + '</span>' : '<span class="shrink-0 text-[#C7C0AF]">' + ARROW_SVG + '</span>') +
+          '</div></button>';
+      }).join('');
+
+      Sheet.open(
+        '<div class="space-y-4">' +
+          '<div><p class="serif text-[18px] font-semibold text-ink">Talasimpanan</p>' +
+            '<p class="text-[11.5px] text-[#8A8378] mt-0.5">' + all.length + ' salitang Tagalog</p></div>' +
+          '<div id="dictList" class="space-y-2 max-h-[58vh] overflow-y-auto pr-1 scrollbar-thin">' + rows + '</div>' +
+        '</div>'
+      );
+
+      var list = $('#dictList');
+      if (list) {
+        list.addEventListener('click', function (e) {
+          var btn = e.target.closest ? e.target.closest('[data-word]') : null;
+          if (!btn) return;
+          var word = btn.getAttribute('data-word');
+          var entry = WORDS.filter(function (w) { return w.word === word; })[0];
+          if (entry) Home.showWordDetail(entry);
+        });
+      }
+    },
+
+    showWordDetail: function (entry) {
+      var seen = Stats.load().words || {};
+      var know = !!seen[entry.word];
+
+      Sheet.open(
+        '<div class="space-y-4">' +
+          '<div class="flex items-start justify-between gap-3">' +
+            '<div class="min-w-0">' +
+              '<p class="serif text-[26px] font-semibold text-ink leading-none">' + esc(entry.word) + '</p>' +
+              '<p class="text-[12.5px] font-medium text-maroon mt-2">' + esc(entry.english) + '</p>' +
+            '</div>' +
+            '<button id="detailSpeak" class="w-10 h-10 rounded-lg grid place-items-center border border-[#E5DFD1] hover:bg-paper transition shrink-0 focus-ring" aria-label="Pakinggan">' +
+              '<svg viewBox="0 0 24 24" class="w-[17px] h-[17px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg></button>' +
+          '</div>' +
+          '<p class="text-[13.5px] text-[#57534A] leading-relaxed">' + esc(entry.meaning) + '</p>' +
+          '<div class="bg-paper border border-[#E5DFD1] rounded-xl px-4 py-3.5">' +
+            '<p class="text-[10px] font-semibold uppercase tracking-wide text-[#9A9384] mb-1.5">Halimbawa</p>' +
+            '<p class="serif text-[13px] italic text-[#3A362F] leading-relaxed">' + esc(entry.example) + '</p>' +
+            (entry.translation ? '<p class="text-[12px] text-[#8A8378] mt-1.5">' + esc(entry.translation) + '</p>' : '') +
+          '</div>' +
+          '<p class="text-[12px] font-medium text-[#8A8378]">' + (know ? 'Napag-aralan mo na ito.' : 'Hindi mo pa ito nakikita sa laro.') + '</p>' +
+          '<div class="grid grid-cols-2 gap-2.5 pt-1">' +
+            '<button id="detailBack" class="border border-[#E5DFD1] rounded-lg font-medium text-[13px] py-3 hover:bg-paper transition focus-ring">Bumalik</button>' +
+            '<button id="detailClose" class="bg-ink text-paper rounded-lg font-medium text-[13px] py-3 hover:bg-[#3A362F] transition focus-ring">Isara</button>' +
+          '</div>' +
+        '</div>'
+      );
+
+      var speak = $('#detailSpeak');
+      if (speak) speak.addEventListener('click', function () { Home.speak(entry.word); });
+      var back = $('#detailBack');
+      if (back) back.addEventListener('click', function () { Sheet.close(); setTimeout(function () { Home.showDictionary(); }, 210); });
+      var close = $('#detailClose');
+      if (close) close.addEventListener('click', function () { Sheet.close(); });
+    },
+
+    confirm: function (title, body, confirmLabel) {
+      return new Promise(function (resolve) {
+        Sheet.open(
+          '<div class="space-y-4">' +
+            '<div class="text-center">' +
+              '<p class="serif text-[18px] font-semibold text-ink">' + esc(title) + '</p>' +
+              '<p class="text-[13px] text-[#8A8378] mt-2 leading-relaxed">' + esc(body) + '</p>' +
+            '</div>' +
+            '<div class="grid grid-cols-2 gap-2.5">' +
+              '<button id="confirmNo" class="border border-[#E5DFD1] rounded-lg font-medium text-[13px] py-3 hover:bg-paper transition focus-ring">Huwag</button>' +
+              '<button id="confirmYes" class="bg-maroon text-white rounded-lg font-semibold text-[13px] py-3 hover:bg-maroon-dark transition focus-ring">' + esc(confirmLabel || 'Oo') + '</button>' +
+            '</div>' +
+          '</div>',
+          { onClose: function () { resolve(false); } }
+        );
+        var no = $('#confirmNo');
+        if (no) no.addEventListener('click', function () { Sheet.close(); resolve(false); });
+        var yes = $('#confirmYes');
+        if (yes) yes.addEventListener('click', function () { Sheet.close(); resolve(true); });
+      });
+    },
+  };
+
+  /* ============================================================
+     AUTH UI — welcome / sign in / create account / account sheet
+     ============================================================ */
+  var AuthUI = {
+    renderWelcome: function () {
+      var hasAccounts = Auth.listUsernames().length > 0;
+      Screens.show('welcome', function () {
+        var html = '<div class="space-y-8 pt-4">';
+        html += '<div class="text-center">';
+        html += '<p class="text-[11px] font-semibold uppercase tracking-wide text-maroon">Talaan ng Manlalaro</p>';
+        html += '<h1 class="serif text-[26px] font-semibold leading-tight text-ink mt-2">Kumusta! Sino ka?</h1>';
+        html += '<p class="text-[13px] text-[#57534A] leading-relaxed mt-2 max-w-sm mx-auto">Gumawa ng profile upang masubaybayan ang iyong iskor, streak, at natutunang salita sa telepong ito.</p>';
+        html += '</div>';
+
+        html += '<div class="space-y-2.5">';
+        html += '<button id="goCreate" class="w-full rounded-xl bg-ink text-paper font-medium text-[14.5px] py-3.5 hover:bg-[#3A362F] active:scale-[.99] transition focus-ring">Gumawa ng Bagong Profile</button>';
+        if (hasAccounts) {
+          html += '<button id="goLogin" class="w-full border border-[#E5DFD1] rounded-xl font-medium text-[14px] py-3.5 hover:bg-white transition focus-ring">Mag-login sa Umiiral na Profile</button>';
+        }
+        html += '<button id="goImport" class="w-full border border-dashed border-[#D8D2C4] rounded-xl font-medium text-[13px] text-[#57534A] py-3.5 hover:bg-white transition focus-ring">Ilagay ang Backup Code mula sa Ibang Telepono</button>';
+        html += '<button id="goGuest" class="w-full text-[12.5px] font-medium text-[#9A9384] hover:text-[#57534A] py-2 transition">Magpatuloy bilang Bisita (hindi mase-save)</button>';
+        html += '</div>';
+        html += '</div>';
+        return html;
+      });
+
+      var goCreate = $('#goCreate');
+      if (goCreate) goCreate.addEventListener('click', function () { AuthUI.renderCreate(); });
+      var goLogin = $('#goLogin');
+      if (goLogin) goLogin.addEventListener('click', function () { AuthUI.renderLogin(); });
+      var goImport = $('#goImport');
+      if (goImport) goImport.addEventListener('click', function () { AuthUI.renderImport(); });
+      var goGuest = $('#goGuest');
+      if (goGuest) goGuest.addEventListener('click', function () {
+        Auth._current = { id: 'guest', username: 'Bisita' };
+        Home.render();
+      });
+    },
+
+    renderCreate: function () {
+      Screens.show('create-account', function () {
+        var html = '<div class="space-y-6 pt-2">';
+        html += '<div>';
+        html += '<button id="backWelcome" class="text-[12.5px] font-medium text-[#8A8378] hover:text-[#57534A] transition mb-4">&larr; Bumalik</button>';
+        html += '<h1 class="serif text-[22px] font-semibold text-ink">Gumawa ng Profile</h1>';
+        html += '<p class="text-[12.5px] text-[#8A8378] mt-1">Naka-save lamang ito sa telepong ito.</p>';
+        html += '</div>';
+        html += '<form id="createForm" class="space-y-3.5">';
+        html += '<div class="space-y-1.5">';
+        html += '<label class="text-[11px] font-semibold uppercase tracking-wide text-[#9A9384]">Username</label>';
+        html += '<input id="createUsername" type="text" autocomplete="username" class="w-full border border-[#E5DFD1] rounded-lg px-3.5 py-3 text-[14.5px] bg-white focus-ring" placeholder="hal. juandelacruz" />';
+        html += '</div>';
+        html += '<div class="space-y-1.5">';
+        html += '<label class="text-[11px] font-semibold uppercase tracking-wide text-[#9A9384]">Password</label>';
+        html += '<input id="createPassword" type="password" autocomplete="new-password" class="w-full border border-[#E5DFD1] rounded-lg px-3.5 py-3 text-[14.5px] bg-white focus-ring" placeholder="Hindi bababa sa 4 na karakter" />';
+        html += '</div>';
+        html += '<p id="createError" class="hidden text-[12.5px] font-medium text-maroon"></p>';
+        html += '<button type="submit" class="w-full rounded-xl bg-ink text-paper font-medium text-[14.5px] py-3.5 hover:bg-[#3A362F] active:scale-[.99] transition focus-ring">Gumawa ng Profile</button>';
+        html += '</form>';
+        html += '</div>';
+        return html;
+      });
+
+      var back = $('#backWelcome');
+      if (back) back.addEventListener('click', function () { AuthUI.renderWelcome(); });
+
+      var form = $('#createForm');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var username = $('#createUsername').value;
+          var password = $('#createPassword').value;
+          var errEl = $('#createError');
+          Auth.create(username, password).then(function () {
+            toast('Nagawa ang profile.', 'success');
+            Home.render();
+          }).catch(function (err) {
+            if (errEl) { errEl.textContent = err.message; errEl.classList.remove('hidden'); }
+          });
+        });
+      }
+    },
+
+    renderLogin: function () {
+      Screens.show('login', function () {
+        var html = '<div class="space-y-6 pt-2">';
+        html += '<div>';
+        html += '<button id="backWelcome" class="text-[12.5px] font-medium text-[#8A8378] hover:text-[#57534A] transition mb-4">&larr; Bumalik</button>';
+        html += '<h1 class="serif text-[22px] font-semibold text-ink">Mag-login</h1>';
+        html += '<p class="text-[12.5px] text-[#8A8378] mt-1">Sa mga profile na ginawa sa telepong ito.</p>';
+        html += '</div>';
+        html += '<form id="loginForm" class="space-y-3.5">';
+        html += '<div class="space-y-1.5">';
+        html += '<label class="text-[11px] font-semibold uppercase tracking-wide text-[#9A9384]">Username</label>';
+        html += '<input id="loginUsername" type="text" autocomplete="username" class="w-full border border-[#E5DFD1] rounded-lg px-3.5 py-3 text-[14.5px] bg-white focus-ring" />';
+        html += '</div>';
+        html += '<div class="space-y-1.5">';
+        html += '<label class="text-[11px] font-semibold uppercase tracking-wide text-[#9A9384]">Password</label>';
+        html += '<input id="loginPassword" type="password" autocomplete="current-password" class="w-full border border-[#E5DFD1] rounded-lg px-3.5 py-3 text-[14.5px] bg-white focus-ring" />';
+        html += '</div>';
+        html += '<p id="loginError" class="hidden text-[12.5px] font-medium text-maroon"></p>';
+        html += '<button type="submit" class="w-full rounded-xl bg-ink text-paper font-medium text-[14.5px] py-3.5 hover:bg-[#3A362F] active:scale-[.99] transition focus-ring">Mag-login</button>';
+        html += '</form>';
+        html += '</div>';
+        return html;
+      });
+
+      var back = $('#backWelcome');
+      if (back) back.addEventListener('click', function () { AuthUI.renderWelcome(); });
+
+      var form = $('#loginForm');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var username = $('#loginUsername').value;
+          var password = $('#loginPassword').value;
+          var errEl = $('#loginError');
+          Auth.login(username, password).then(function () {
+            toast('Naka-login.', 'success');
+            Home.render();
+          }).catch(function (err) {
+            if (errEl) { errEl.textContent = err.message; errEl.classList.remove('hidden'); }
+          });
+        });
+      }
+    },
+
+    renderImport: function () {
+      Screens.show('import', function () {
+        var html = '<div class="space-y-6 pt-2">';
+        html += '<div>';
+        html += '<button id="backWelcome" class="text-[12.5px] font-medium text-[#8A8378] hover:text-[#57534A] transition mb-4">&larr; Bumalik</button>';
+        html += '<h1 class="serif text-[22px] font-semibold text-ink">Ilagay ang Backup Code</h1>';
+        html += '<p class="text-[12.5px] text-[#8A8378] mt-1 leading-relaxed">Kopyahin ang code na nakuha mo sa ibang telepono (mula sa Aking Profile &rarr; I-backup ang Progreso) at idikit dito.</p>';
+        html += '</div>';
+        html += '<form id="importForm" class="space-y-3.5">';
+        html += '<textarea id="importCode" rows="4" class="w-full border border-[#E5DFD1] rounded-lg px-3.5 py-3 text-[13px] font-mono bg-white focus-ring" placeholder="TLST1-..."></textarea>';
+        html += '<p id="importError" class="hidden text-[12.5px] font-medium text-maroon"></p>';
+        html += '<button type="submit" class="w-full rounded-xl bg-ink text-paper font-medium text-[14.5px] py-3.5 hover:bg-[#3A362F] active:scale-[.99] transition focus-ring">Ibalik ang Profile</button>';
+        html += '</form>';
+        html += '</div>';
+        return html;
+      });
+
+      var back = $('#backWelcome');
+      if (back) back.addEventListener('click', function () { AuthUI.renderWelcome(); });
+
+      var form = $('#importForm');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var code = $('#importCode').value;
+          var errEl = $('#importError');
+          Backup.importCode(code).then(function (acc) {
+            toast('Naibalik ang profile ni ' + acc.username + '.', 'success');
+            Home.render();
+          }).catch(function (err) {
+            if (errEl) { errEl.textContent = err.message; errEl.classList.remove('hidden'); }
+          });
+        });
+      }
+    },
+
+    openAccountSheet: function () {
+      var acc = Auth.current();
+      var isGuest = !acc || acc.id === 'guest';
+
+      var body = '<div class="space-y-4">';
+      body += '<div>';
+      body += '<p class="serif text-[18px] font-semibold text-ink">' + esc(isGuest ? 'Bisita' : acc.username) + '</p>';
+      body += '<p class="text-[11.5px] text-[#8A8378] mt-0.5">' + (isGuest ? 'Hindi naka-save ang progreso sa mode na ito.' : 'Naka-save sa telepong ito.') + '</p>';
+      body += '</div>';
+
+      if (!isGuest) {
+        body += '<div class="bg-paper border border-[#E5DFD1] rounded-xl px-4 py-3.5 space-y-2">';
+        body += '<p class="text-[10.5px] font-semibold uppercase tracking-wide text-[#9A9384]">I-backup ang Progreso</p>';
+        body += '<p class="text-[12px] text-[#57534A] leading-relaxed">Kopyahin ang code na ito at idikit sa "Ilagay ang Backup Code" sa ibang telepono upang ilipat ang iyong progreso.</p>';
+        body += '<button id="genBackup" class="w-full border border-[#E5DFD1] bg-white rounded-lg font-medium text-[13px] py-2.5 hover:bg-paper transition focus-ring">Buuin ang Backup Code</button>';
+        body += '<textarea id="backupOutput" readonly rows="3" class="hidden w-full border border-[#E5DFD1] rounded-lg px-3 py-2 text-[11.5px] font-mono bg-white focus-ring"></textarea>';
+        body += '<button id="copyBackup" class="hidden w-full bg-ink text-paper rounded-lg font-medium text-[12.5px] py-2.5 hover:bg-[#3A362F] transition focus-ring">Kopyahin ang Code</button>';
+        body += '</div>';
+      }
+
+      body += '<div class="grid grid-cols-2 gap-2.5 pt-1">';
+      body += '<button id="switchAccountBtn" class="border border-[#E5DFD1] rounded-lg font-medium text-[13px] py-3 hover:bg-paper transition focus-ring">Lumipat ng Profile</button>';
+      body += '<button id="signOutBtn" class="bg-maroon text-white rounded-lg font-semibold text-[13px] py-3 hover:bg-maroon-dark transition focus-ring">' + (isGuest ? 'Bumalik' : 'Mag-sign Out') + '</button>';
+      body += '</div>';
+      body += '</div>';
+
+      Sheet.open(body);
+
+      var gen = $('#genBackup');
+      if (gen) {
+        gen.addEventListener('click', function () {
+          var code = Backup.exportCode();
+          var out = $('#backupOutput');
+          var copyBtn = $('#copyBackup');
+          if (code && out) {
+            out.value = code;
+            out.classList.remove('hidden');
+            if (copyBtn) copyBtn.classList.remove('hidden');
+          } else {
+            toast('Hindi nagawa ang backup code.', 'error');
+          }
+        });
+      }
+      var copy = $('#copyBackup');
+      if (copy) {
+        copy.addEventListener('click', function () {
+          var out = $('#backupOutput');
+          if (!out) return;
+          out.select();
+          try {
+            navigator.clipboard.writeText(out.value).then(function () {
+              toast('Nakopya ang backup code.', 'success');
+            }).catch(function () {
+              document.execCommand('copy');
+              toast('Nakopya ang backup code.', 'success');
+            });
+          } catch (e) {
+            try { document.execCommand('copy'); toast('Nakopya ang backup code.', 'success'); }
+            catch (e2) { toast('Hindi makopya. Piliin at kopyahin nang manu-mano.', 'warn'); }
+          }
+        });
+      }
+      var switchBtn = $('#switchAccountBtn');
+      if (switchBtn) {
+        switchBtn.addEventListener('click', function () {
+          Sheet.close();
+          Auth.signOut();
+          setTimeout(function () { AuthUI.renderWelcome(); }, 210);
+        });
+      }
+      var signOut = $('#signOutBtn');
+      if (signOut) {
+        signOut.addEventListener('click', function () {
+          Sheet.close();
+          Auth.signOut();
+          setTimeout(function () { AuthUI.renderWelcome(); }, 210);
+        });
+      }
+    },
+  };
+
+  /* ============================================================
+     GLOBAL BINDINGS
+     ============================================================ */
+  var brandBtn = $('#brandBtn');
+  if (brandBtn) brandBtn.addEventListener('click', function () { Home.render(); });
+
+  var accountBtn = $('#accountBtn');
+  if (accountBtn) accountBtn.addEventListener('click', function () { AuthUI.openAccountSheet(); });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var tag = (e.target && e.target.tagName) || '';
+    if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+    if (Screens.current === 'game' && Game.answered === false) {
+      var key = e.key.toUpperCase();
+      var letters = ['A', 'B', 'C', 'D'];
+      var idx = letters.indexOf(key);
+      if (idx !== -1) {
+        var btns = $$('#optionsHost [data-option]');
+        if (btns[idx] && !btns[idx].disabled) {
+          e.preventDefault();
+          Game.handleAnswer(btns[idx].getAttribute('data-option'), btns[idx]);
+        }
+      } else if (e.key === 'Enter') {
+        var next = $('#nextBtn');
+        if (next) { e.preventDefault(); next.click(); }
+      }
+    }
+  });
+
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+      if (Game.timerId) clearInterval(Game.timerId);
+    } else if (Screens.current === 'game' && Game.answered === false) {
+      Game.startTimer();
+    }
+  });
+
+  /* ============================================================
+     BOOT
+     ============================================================ */
+  (function boot() {
+    var restored = Auth.restoreSession();
+    if (restored) {
+      Home.render();
+    } else {
+      AuthUI.renderWelcome();
+    }
+    Home.refreshAccountLabel();
+  })();
+
+  window.Talasalitaan = { Game: Game, Home: Home, Screens: Screens, Stats: Stats, Streak: Streak, Best: Best, Auth: Auth, Backup: Backup, WORDS: WORDS, MODES: MODES };
+})();
+</script>
+</body>
+</html>
